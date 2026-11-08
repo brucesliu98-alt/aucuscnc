@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laser Cutting Software: CAD, CAM/Nesting &amp; Controller Guide</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1d2430; --muted: #5d6878;
+  --line: #dde2e8; --accent: #1f5fae; --accent-soft: #e8f0fb; --code-bg: #0f1720; --code-text: #d7e1ee;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #11151b; --card: #1a2029; --text: #e6ebf2; --muted: #9aa6b5;
+    --line: #2c3540; --accent: #6ea8ff; --accent-soft: #1c2a3d; --code-bg: #0b0f14; --code-text: #cfd9e6; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 24px 16px 64px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.panel h2.label { margin: 0 0 12px; font-size: 15px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.field { display: grid; grid-template-columns: 130px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); }
+.field:first-of-type { border-top: 0; }
+.field .k { color: var(--muted); font-size: 14px; }
+.field .v { word-break: break-word; }
+.field .n { color: var(--muted); font-size: 12px; }
+button { font: inherit; font-size: 14px; border: 1px solid var(--accent); background: var(--accent); color: #fff;
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+button.ghost { background: transparent; color: var(--accent); }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.toolbar .hint { color: var(--muted); font-size: 13px; }
+textarea { width: 100%; height: 260px; background: var(--code-bg); color: var(--code-text); border: 0; border-radius: 8px;
+  padding: 12px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; resize: vertical; }
+article h1 { font-size: 30px; line-height: 1.25; margin: 0 0 18px; }
+article h2 { font-size: 23px; margin: 36px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+article h3 { font-size: 18px; margin: 26px 0 8px; }
+article a { color: var(--accent); }
+article figure { margin: 18px 0; overflow-x: auto; }
+article table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 560px; }
+article th, article td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+article th { background: var(--accent-soft); }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg);
+  padding: 8px 14px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.show { opacity: 1; }
+@media (max-width: 600px) { .field { grid-template-columns: 1fr; } article h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="panel">
+  <h2 class="label">SEO 设置（粘贴到 Rank Math / Yoast）</h2>
+  <div class="field"><div class="k">SEO Title<div class="n">59 字符</div></div><div class="v" id="f-title">Laser Cutting Software: CAD, CAM/Nesting &amp; Controller Guide</div><button class="ghost" data-copy="f-title">复制</button></div>
+  <div class="field"><div class="k">Meta Description<div class="n">155 字符</div></div><div class="v" id="f-meta">Laser cutting software has three layers: design, CAM/nesting and the machine controller. See what each does, what it costs and which your metal shop needs.</div><button class="ghost" data-copy="f-meta">复制</button></div>
+  <div class="field"><div class="k">URL slug</div><div class="v" id="f-slug">laser-cutting-software</div><button class="ghost" data-copy="f-slug">复制</button></div>
+  <div class="field"><div class="k">文章标题（H1）</div><div class="v" id="f-h1">Laser Cutting Software Explained: Design, CAM/Nesting and Controller Software for Metal Shops</div><button class="ghost" data-copy="f-h1">复制</button></div>
+</section>
+
+<section class="panel">
+  <h2 class="label">WordPress HTML 代码（正文 + FAQ Schema，共 7 条 FAQ）</h2>
+  <div class="toolbar">
+    <button id="copy-code">一键复制 HTML</button>
+    <span class="hint">古腾堡：添加"自定义 HTML"区块后粘贴，或在右上角"⋮ → 代码编辑器"中粘贴。经典编辑器：切换到"文本"标签后粘贴。</span>
+  </div>
+  <textarea id="code" readonly>&lt;p&gt;Laser cutting software is not one program but three layers that hand work to each other: &lt;strong&gt;design (CAD) software&lt;/strong&gt; creates the part geometry, &lt;strong&gt;CAM/nesting software&lt;/strong&gt; arranges parts on the sheet and assigns cutting paths, and &lt;strong&gt;controller software&lt;/strong&gt; runs on the machine and turns those paths into motion, laser power and gas pressure. Most fiber laser cutting machines ship with controller software and a basic nesting module included, so a small job shop can start cutting with the bundled package plus any CAD program that exports clean DXF files. A dedicated third-party CAM/nesting package starts to pay for itself when material spend is high, part mixes change daily, or several machines need one programming workflow.&lt;/p&gt;
+&lt;p&gt;This guide covers 2D sheet metal and tube cutting on fiber laser cutting machines from roughly 1.5 kW to 30 kW. It does not cover hobby CO2 lasers, galvo marking software, or 3D five-axis robotic cutting, which use different software stacks.&lt;/p&gt;
+&lt;h2&gt;The Three Layers of Laser Cutting Software&lt;/h2&gt;
+&lt;p&gt;Every metal laser cutting workflow passes through the same three stages, even when one program covers more than one of them. Knowing which layer a product belongs to prevents the most common buying mistake: paying for a second program that duplicates what the machine already includes.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Layer&lt;/th&gt;
+&lt;th&gt;What it does&lt;/th&gt;
+&lt;th&gt;Typical output&lt;/th&gt;
+&lt;th&gt;Who uses it&lt;/th&gt;
+&lt;th&gt;Usually included with the machine?&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Design (CAD)&lt;/td&gt;
+&lt;td&gt;Creates or edits part geometry; unfolds 3D sheet metal parts into flat patterns&lt;/td&gt;
+&lt;td&gt;DXF, DWG, STEP&lt;/td&gt;
+&lt;td&gt;Design engineer, customer, programmer&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CAM / nesting&lt;/td&gt;
+&lt;td&gt;Imports geometry, nests parts on sheets, assigns lead-ins, cut order, micro-joints and process layers&lt;/td&gt;
+&lt;td&gt;Nest file or NC program for a specific controller&lt;/td&gt;
+&lt;td&gt;Programmer&lt;/td&gt;
+&lt;td&gt;Basic nesting: often yes. Advanced nesting: no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Controller&lt;/td&gt;
+&lt;td&gt;Runs the machine: motion, height sensing, laser power, assist gas, piercing, error handling&lt;/td&gt;
+&lt;td&gt;Finished parts&lt;/td&gt;
+&lt;td&gt;Machine operator&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; if you only buy one extra program, it is almost always in the design layer. The CAM/nesting layer is the only one where a real &quot;bundled vs third-party&quot; decision exists. The controller layer is fixed by the machine you buy.&lt;/p&gt;
+&lt;h3&gt;Design Software for Laser Cutting (CAD)&lt;/h3&gt;
+&lt;p&gt;Design software for laser cutting produces the clean 2D outline the laser follows. For sheet metal parts that will later be bent, the design program also needs a sheet metal module that unfolds the 3D part into an accurate flat pattern using the correct bend allowance or K-factor. A flat pattern built with the wrong K-factor cuts perfectly and then bends to the wrong size, which is a design error, not a cutting error.&lt;/p&gt;
+&lt;p&gt;Two groups of laser cutting design software cover most metal shops:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3D CAD with sheet metal tools&lt;/strong&gt; such as SolidWorks, Autodesk Inventor, Autodesk Fusion, Solid Edge and Onshape. These suit shops that design their own products or receive 3D models from customers, because they generate flat patterns and keep them linked to the 3D model when the design changes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2D drafting tools&lt;/strong&gt; such as AutoCAD, DraftSight, LibreCAD and QCAD. These suit job shops that receive finished DXF files and only need to clean, scale or modify geometry before nesting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The output that matters for cutting is a closed-contour DXF or DWG at 1:1 scale, with no duplicate lines, no open gaps between segments, and splines converted to arcs where the controller requires it. Most cut-quality problems that look like machine faults (small notches at contour joins, missed holes, double cuts) trace back to geometry defects in this file.&lt;/p&gt;
+&lt;h3&gt;CAM and Nesting Software&lt;/h3&gt;
+&lt;p&gt;CAM/nesting software turns a list of parts into an efficient, machine-ready sheet layout. Its main tasks are placing parts to minimize scrap, choosing the cut sequence to limit heat build-up and tip-up collisions, adding lead-ins and lead-outs away from critical edges, inserting micro-joints so small parts stay in the skeleton, and applying common-line cutting where two parts can share one cut.&lt;/p&gt;
+&lt;p&gt;Laser cutting machine software for nesting falls into two tiers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bundled nesting&lt;/strong&gt; supplied with the controller, for example CypNest for machines that run Friendess (BOCHU) CypCut. Bundled nesting handles automatic true-shape nesting, lead-ins, micro-joints and common-line cutting, and its output loads directly into the controller without a post-processor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Third-party CAM/nesting&lt;/strong&gt; such as Lantek, SigmaNEST, Radan, Almacam, ProNest and Metalix cncKad. These add multi-machine programming, remnant tracking, order and inventory integration (ERP/MES), automated quoting and, in some products, combined laser–punch or laser–press brake workflows. Each needs a post-processor that matches your specific controller.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nesting quality has a direct cost effect because material is usually the largest variable cost in sheet metal cutting. Shops cutting stainless steel can find material-specific nesting tactics in our guide to &lt;a href=&quot;https://arcuscnc.com/nesting-software-strategies-stainless/&quot;&gt;nesting techniques for stainless sheet&lt;/a&gt;, and a quick utilization estimate is available with the &lt;a href=&quot;https://arcuscnc.com/sheet-nesting-calculator/&quot;&gt;sheet nesting calculator&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Controller Software (Machine Control)&lt;/h3&gt;
+&lt;p&gt;Controller software is the laser cutting machine software that runs on the machine&#x27;s industrial PC or CNC. It reads the nest or NC program and controls axis motion, the capacitive height sensor, focus position, laser power, pulse frequency, assist gas type and pressure, and piercing stages. It also stores the process parameter library: the tested combinations of power, speed, gas, pressure, nozzle and focus for each material and thickness.&lt;/p&gt;
+&lt;p&gt;Most Chinese-built fiber laser cutting machines in the 1.5–12 kW range use Friendess (BOCHU) control systems with CypCut software; higher-power machines on the same platform use HypCut. Other controllers found on Chinese machines include Au3tech and Weihong. European and Japanese OEMs typically run proprietary interfaces on their own or on Siemens and Beckhoff CNC platforms.&lt;/p&gt;
+&lt;p&gt;The controller determines features that no nesting program can add afterwards: &lt;a href=&quot;https://arcuscnc.com/fly-cutting/&quot;&gt;fly cutting&lt;/a&gt; for grids of small holes, frog-jump motion between contours, multi-stage piercing for thick plate, edge seeking on irregular remnants, and automatic nozzle cleaning and calibration. When comparing machines, compare controller features directly, because a third-party CAM package can only use functions the controller supports.&lt;/p&gt;
+&lt;h2&gt;Bundled vs Third-Party Nesting: Which Does Your Shop Need?&lt;/h2&gt;
+&lt;p&gt;The decision is not about cut quality. Cut quality is set by the controller&#x27;s parameter library and the machine itself. The decision is about material utilization, programming time and how many machines and orders the software has to coordinate.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Shop situation&lt;/th&gt;
+&lt;th&gt;Recommended software stack&lt;/th&gt;
+&lt;th&gt;Why&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1 laser, stable product range, &amp;lt; 2 shifts&lt;/td&gt;
+&lt;td&gt;CAD + bundled nesting&lt;/td&gt;
+&lt;td&gt;Bundled nesting already covers true-shape nesting, micro-joints and common-line cutting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1–2 lasers, high-mix job shop, daily new orders&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;CAD + bundled nesting, add third-party CAM when programming becomes the bottleneck&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Most shops in this group reach the limit of bundled nesting through programming time and remnant management, not cut quality&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2+ lasers from different brands&lt;/td&gt;
+&lt;td&gt;CAD + third-party CAM with a post-processor for each controller&lt;/td&gt;
+&lt;td&gt;One programming workflow, one parts library, one quoting process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Laser + punch, or laser + press brake planning&lt;/td&gt;
+&lt;td&gt;CAD + third-party CAM with the matching modules&lt;/td&gt;
+&lt;td&gt;Bundled laser nesting does not program other machines&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ERP-driven production, automated quoting&lt;/td&gt;
+&lt;td&gt;CAD + third-party CAM with ERP/MES integration&lt;/td&gt;
+&lt;td&gt;Orders, stock and remnants flow without manual re-entry&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tube and profile cutting&lt;/td&gt;
+&lt;td&gt;3D CAD (STEP export) + tube nesting matched to the tube controller&lt;/td&gt;
+&lt;td&gt;Tube nesting reads 3D geometry and handles chuck clamping zones and tail waste&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; start with the row that matches your current machine count and order pattern. Move one row down only when a specific limit appears (programming backlog, untracked remnants, multiple controller brands), not because a software demo looked impressive.&lt;/p&gt;
+&lt;h2&gt;What Laser Cutting Software Costs&lt;/h2&gt;
+&lt;p&gt;Laser cutting software cost has three parts: license, annual maintenance, and the internal time needed to set it up. The figures below are typical ranges reported by resellers and published price lists as of 2026, in USD. Actual pricing depends on region, modules and seat count, so verify with your supplier before budgeting.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Software layer&lt;/th&gt;
+&lt;th&gt;Typical cost (USD, as of 2026)&lt;/th&gt;
+&lt;th&gt;Billing model&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2D drafting CAD&lt;/td&gt;
+&lt;td&gt;Free to ~2,000 per year&lt;/td&gt;
+&lt;td&gt;Free, perpetual or subscription&lt;/td&gt;
+&lt;td&gt;LibreCAD and QCAD are free; AutoCAD LT and DraftSight are paid subscriptions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3D CAD with sheet metal module&lt;/td&gt;
+&lt;td&gt;~700 to ~8,000 per seat per year&lt;/td&gt;
+&lt;td&gt;Mostly subscription&lt;/td&gt;
+&lt;td&gt;Cloud tools sit at the low end; full desktop suites at the high end&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bundled nesting&lt;/td&gt;
+&lt;td&gt;Included with the machine&lt;/td&gt;
+&lt;td&gt;Included&lt;/td&gt;
+&lt;td&gt;Upgrades or extra seats may be charged separately&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Third-party CAM/nesting&lt;/td&gt;
+&lt;td&gt;~5,000 to 30,000+ per seat (perpetual) or annual subscription&lt;/td&gt;
+&lt;td&gt;Perpetual + 15–20% yearly maintenance, or subscription&lt;/td&gt;
+&lt;td&gt;Post-processors, tube modules and ERP links are often priced as add-ons&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Controller software&lt;/td&gt;
+&lt;td&gt;Included with the machine&lt;/td&gt;
+&lt;td&gt;Included&lt;/td&gt;
+&lt;td&gt;Feature upgrades depend on the controller vendor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; the only layer with a large, optional cost is third-party CAM/nesting. Budget for at least two to four weeks of programmer time to build the parts library, material table and post-processor settings, because this setup time often costs more than the first-year license.&lt;/p&gt;
+&lt;h3&gt;Payback Calculation for Third-Party Nesting&lt;/h3&gt;
+&lt;p&gt;Third-party nesting usually pays back through better material utilization and lower programming time. The calculation below shows how to test that for your shop.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hypothetical example:&lt;/em&gt; a job shop buys 150 tonnes of mild and stainless sheet per year at an average of USD 1,400 per tonne, for an annual material spend of USD 210,000.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Factor&lt;/th&gt;
+&lt;th&gt;Bundled nesting&lt;/th&gt;
+&lt;th&gt;Third-party CAM&lt;/th&gt;
+&lt;th&gt;Difference&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Material utilization&lt;/td&gt;
+&lt;td&gt;72%&lt;/td&gt;
+&lt;td&gt;75%&lt;/td&gt;
+&lt;td&gt;+3 percentage points&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Material cost per year at equal output&lt;/td&gt;
+&lt;td&gt;USD 210,000&lt;/td&gt;
+&lt;td&gt;about USD 201,600&lt;/td&gt;
+&lt;td&gt;about USD 8,400 saved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Programming time per week&lt;/td&gt;
+&lt;td&gt;12 hours&lt;/td&gt;
+&lt;td&gt;8 hours&lt;/td&gt;
+&lt;td&gt;4 hours saved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Programming labor saved per year (USD 35/hour, 48 weeks)&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;USD 6,720&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total annual benefit&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;about USD 15,100&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;With a USD 15,000 license and USD 2,500 annual maintenance, payback in this example is a little over one year. If the real utilization gain is only one percentage point and programming time does not change, the saving falls to about USD 2,900 per year, which barely covers the annual maintenance fee, so the license never pays back. Run your own figures with actual scrap weights before buying; the utilization gain is the number software vendors most often overstate. For converting these savings into part prices, see &lt;a href=&quot;https://arcuscnc.com/quoting-laser-cutting/&quot;&gt;how job shops quote laser cutting&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Matching Software to Real Shop Scenarios&lt;/h2&gt;
+&lt;p&gt;Each scenario below describes a common type of metal shop and the laser cutting software stack that fits it. Find the one closest to yours.&lt;/p&gt;
+&lt;h3&gt;Small Job Shop With One Fiber Laser&lt;/h3&gt;
+&lt;p&gt;A small job shop with one 3–6 kW fiber laser cutting machine and customer-supplied DXF files needs a 2D CAD program for cleanup and the bundled nesting and controller software. The main software skills to build are DXF cleanup, layer-based process assignment and use of the controller&#x27;s parameter library. Buying third-party CAM at this stage usually adds cost without removing a bottleneck.&lt;/p&gt;
+&lt;h3&gt;OEM Manufacturer Cutting Its Own Products&lt;/h3&gt;
+&lt;p&gt;A manufacturer cutting its own enclosures, brackets or frames needs 3D CAD with a sheet metal module, because flat patterns must stay linked to the 3D design when engineering changes happen. Bundled nesting is often sufficient because the part library is stable and repeat orders can reuse saved nests. The key software decision is setting the correct K-factor and bend tables in CAD so cut blanks bend to size.&lt;/p&gt;
+&lt;h3&gt;Multi-Machine or Mixed-Brand Shop&lt;/h3&gt;
+&lt;p&gt;A shop running several lasers, especially from different manufacturers, benefits most from third-party CAM/nesting. A single program with a post-processor for each controller lets one programmer schedule work across all machines and keeps one parts library. Confirm that a tested post-processor exists for each exact controller model before purchase, because an untested post-processor can output motion that the controller rejects or runs incorrectly.&lt;/p&gt;
+&lt;h3&gt;Tube and Profile Cutting&lt;/h3&gt;
+&lt;p&gt;Tube laser cutting software works from 3D geometry, usually STEP files, rather than flat DXF. Tube nesting must account for chuck clamping zones, tail material waste, profile orientation and weld-seam position. Most tube controllers ship with matched tube nesting software, and third-party tube modules exist for shops that program sheet and tube in one system. More background on tube machines is in our overview of &lt;a href=&quot;https://arcuscnc.com/tube-laser-cutting-machine/&quot;&gt;tube laser cutting machines&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Key Features to Check Before Choosing&lt;/h2&gt;
+&lt;p&gt;The features below separate laser cutting software that saves time from software that only produces a valid nest. Check them in a demo using your own parts, not the vendor&#x27;s demo files.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;Layer&lt;/th&gt;
+&lt;th&gt;Why it matters&lt;/th&gt;
+&lt;th&gt;How to test in a demo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;DXF/DWG import repair&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Fixes open contours and duplicate lines automatically&lt;/td&gt;
+&lt;td&gt;Import 5 of your own messy customer files&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True-shape automatic nesting&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Main driver of material utilization&lt;/td&gt;
+&lt;td&gt;Nest a real week of orders and compare scrap with your current layouts&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Common-line cutting and bridges&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Fewer pierces and shorter cut paths on rectangular parts&lt;/td&gt;
+&lt;td&gt;Nest 20 identical rectangles and check pierce count&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Micro-joints (tabs) control&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Keeps small parts from tipping and colliding with the head&lt;/td&gt;
+&lt;td&gt;Set tab width per material; check that tabs break cleanly&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Remnant tracking&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Reuses offcuts instead of scrapping them&lt;/td&gt;
+&lt;td&gt;Save a remnant, then nest a new order onto it&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Post-processor for your controller&lt;/td&gt;
+&lt;td&gt;CAM&lt;/td&gt;
+&lt;td&gt;Determines whether output runs correctly&lt;/td&gt;
+&lt;td&gt;Ask for a reference shop running the same controller model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Parameter library by material and thickness&lt;/td&gt;
+&lt;td&gt;Controller&lt;/td&gt;
+&lt;td&gt;Sets cut quality&lt;/td&gt;
+&lt;td&gt;Check that libraries exist for every material you cut&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Piercing stages and thick-plate control&lt;/td&gt;
+&lt;td&gt;Controller&lt;/td&gt;
+&lt;td&gt;Prevents blowouts and lens damage on thick plate&lt;/td&gt;
+&lt;td&gt;Compare stage settings for 16–25 mm mild steel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Height sensing and edge seeking&lt;/td&gt;
+&lt;td&gt;Controller&lt;/td&gt;
+&lt;td&gt;Keeps standoff stable and finds sheet edges&lt;/td&gt;
+&lt;td&gt;Run edge seek on a skewed sheet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fly cutting and frog jump&lt;/td&gt;
+&lt;td&gt;Controller&lt;/td&gt;
+&lt;td&gt;Cuts grid patterns and moves between contours faster&lt;/td&gt;
+&lt;td&gt;Time a perforated panel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; the CAM rows decide material and programming efficiency; the controller rows decide cut quality and reliability. Thick-plate users should read our guide to &lt;a href=&quot;https://arcuscnc.com/optimizing-laser-piercing-parameters-for-thick-plate-cutting/&quot;&gt;piercing parameters for thick plate&lt;/a&gt;, and operators facing height-control alarms can use our &lt;a href=&quot;https://arcuscnc.com/troubleshooting-capacitive-sensor-errors/&quot;&gt;capacitive height sensor error guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Limitations and When Other Options Are Better&lt;/h2&gt;
+&lt;p&gt;Laser cutting software cannot fix problems that start outside the software, and in some situations a different approach is the better choice.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When the bundled software is the right answer:&lt;/strong&gt; a single-machine shop with stable work should not buy third-party CAM to fix cut quality. Dross, burrs and taper come from parameters, nozzle condition, focus and gas purity, not from the nesting program.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When third-party CAM is not enough:&lt;/strong&gt; if the bottleneck is part handling, sorting or sheet loading, faster programming only moves the queue to the unloading table. Automation hardware or better shop-floor organization solves that, not software.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When outsourcing programming makes sense:&lt;/strong&gt; shops cutting a small number of complex orders each month may get better results paying an experienced programmer per job than training staff on a full CAM package.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When the machine&#x27;s controller limits the choice:&lt;/strong&gt; some controllers accept only their own file format or a narrow range of post-processors. Check controller compatibility before choosing a CAM package; switching controllers later is far more expensive than switching software.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When free software stops working:&lt;/strong&gt; free CAD tools handle DXF cleanup well but do not produce flat patterns from 3D sheet metal parts, and free nesting tools generally lack controller-specific post-processors and production features such as remnant tracking.&lt;/p&gt;
+&lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;
+&lt;h3&gt;What software do you need for laser cutting metal?&lt;/h3&gt;
+&lt;p&gt;You need design software to create the part geometry, nesting software to lay parts out on the sheet, and controller software to run the machine. Most fiber laser cutting machines include the controller software and a basic nesting module, so the only extra purchase is usually a CAD program that exports clean DXF or DWG files. Third-party CAM/nesting becomes worthwhile when a shop runs several machines, handles many new orders each day, or needs ERP integration and remnant tracking.&lt;/p&gt;
+&lt;h3&gt;Can I use AutoCAD or SolidWorks for laser cutting?&lt;/h3&gt;
+&lt;p&gt;Yes. AutoCAD and SolidWorks are both widely used as design software for laser cutting, but neither drives the machine directly. AutoCAD exports 2D DXF or DWG files; SolidWorks unfolds 3D sheet metal parts into flat patterns and exports them as DXF. The DXF is then imported into nesting or controller software, which adds lead-ins, cut order and process parameters before cutting.&lt;/p&gt;
+&lt;h3&gt;Is there free software for laser cutting?&lt;/h3&gt;
+&lt;p&gt;Free 2D CAD programs such as LibreCAD and QCAD can create and clean DXF files for laser cutting. Free tools rarely cover the other two layers for industrial metal cutting: production nesting with a controller-specific post-processor, and machine control software, which comes with the machine. For a metal shop, the realistic free option is free CAD combined with the nesting and controller software bundled with the laser.&lt;/p&gt;
+&lt;h3&gt;What is CypCut?&lt;/h3&gt;
+&lt;p&gt;CypCut is the controller software developed by Shanghai Friendess Electronic Technology (BOCHU) for 2D fiber laser cutting machines. It imports DXF and other drawing files, assigns process parameters by layer, controls piercing, height sensing and cutting motion, and includes functions such as fly cutting and edge seeking. It is used on a large share of Chinese-built fiber laser cutting machines, and Friendess also offers CypNest for nesting and HypCut for higher-power machines.&lt;/p&gt;
+&lt;h3&gt;Does nesting software improve cut quality?&lt;/h3&gt;
+&lt;p&gt;Nesting software does not change edge quality, which depends on laser power, speed, assist gas, focus position and nozzle condition set in the controller. Nesting software affects quality indirectly: a good cut sequence limits heat build-up in small parts, correctly placed lead-ins avoid marks on visible edges, and micro-joints stop parts tipping into the head path. Material utilization and programming time are its main benefits.&lt;/p&gt;
+&lt;h3&gt;How much does laser cutting software cost?&lt;/h3&gt;
+&lt;p&gt;Controller software and basic nesting are normally included with the machine. 2D CAD ranges from free to about USD 2,000 per year, and 3D CAD with sheet metal tools typically costs about USD 700 to 8,000 per seat per year. Third-party CAM/nesting is the largest optional cost, typically about USD 5,000 to 30,000 or more per seat plus 15–20% annual maintenance, as of 2026. Verify current pricing with resellers in your region.&lt;/p&gt;
+&lt;h3&gt;Can I use one software package for machines from different manufacturers?&lt;/h3&gt;
+&lt;p&gt;Yes, if the CAM/nesting package has a tested post-processor for every controller in the shop. Third-party CAM systems are designed for mixed-brand shops, while bundled nesting usually supports only its own controller. Ask the vendor for a reference customer running your exact controller model and software version, because post-processor quality varies between controllers. Before buying a new machine, check its controller against our &lt;a href=&quot;https://arcuscnc.com/buying-a-fiber-laser-cutter/&quot;&gt;fiber laser cutter buying checklist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What software do you need for laser cutting metal?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;You need design software to create the part geometry, nesting software to lay parts out on the sheet, and controller software to run the machine. Most fiber laser cutting machines include the controller software and a basic nesting module, so the only extra purchase is usually a CAD program that exports clean DXF or DWG files. Third-party CAM/nesting becomes worthwhile when a shop runs several machines, handles many new orders each day, or needs ERP integration and remnant tracking.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Can I use AutoCAD or SolidWorks for laser cutting?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Yes. AutoCAD and SolidWorks are both widely used as design software for laser cutting, but neither drives the machine directly. AutoCAD exports 2D DXF or DWG files; SolidWorks unfolds 3D sheet metal parts into flat patterns and exports them as DXF. The DXF is then imported into nesting or controller software, which adds lead-ins, cut order and process parameters before cutting.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Is there free software for laser cutting?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Free 2D CAD programs such as LibreCAD and QCAD can create and clean DXF files for laser cutting. Free tools rarely cover the other two layers for industrial metal cutting: production nesting with a controller-specific post-processor, and machine control software, which comes with the machine. For a metal shop, the realistic free option is free CAD combined with the nesting and controller software bundled with the laser.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What is CypCut?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;CypCut is the controller software developed by Shanghai Friendess Electronic Technology (BOCHU) for 2D fiber laser cutting machines. It imports DXF and other drawing files, assigns process parameters by layer, controls piercing, height sensing and cutting motion, and includes functions such as fly cutting and edge seeking. It is used on a large share of Chinese-built fiber laser cutting machines, and Friendess also offers CypNest for nesting and HypCut for higher-power machines.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Does nesting software improve cut quality?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Nesting software does not change edge quality, which depends on laser power, speed, assist gas, focus position and nozzle condition set in the controller. Nesting software affects quality indirectly: a good cut sequence limits heat build-up in small parts, correctly placed lead-ins avoid marks on visible edges, and micro-joints stop parts tipping into the head path. Material utilization and programming time are its main benefits.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;How much does laser cutting software cost?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Controller software and basic nesting are normally included with the machine. 2D CAD ranges from free to about USD 2,000 per year, and 3D CAD with sheet metal tools typically costs about USD 700 to 8,000 per seat per year. Third-party CAM/nesting is the largest optional cost, typically about USD 5,000 to 30,000 or more per seat plus 15–20% annual maintenance, as of 2026. Verify current pricing with resellers in your region.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Can I use one software package for machines from different manufacturers?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Yes, if the CAM/nesting package has a tested post-processor for every controller in the shop. Third-party CAM systems are designed for mixed-brand shops, while bundled nesting usually supports only its own controller. Ask the vendor for a reference customer running your exact controller model and software version, because post-processor quality varies between controllers. Before buying a new machine, check its controller against our fiber laser cutter buying checklist.&quot;
+      }
+    }
+  ]
+}
+&lt;/script&gt;
+</textarea>
+</section>
+
+<section class="panel">
+  <h2 class="label">可视化预览</h2>
+  <article>
+    <h1>Laser Cutting Software Explained: Design, CAM/Nesting and Controller Software for Metal Shops</h1>
+    <p>Laser cutting software is not one program but three layers that hand work to each other: <strong>design (CAD) software</strong> creates the part geometry, <strong>CAM/nesting software</strong> arranges parts on the sheet and assigns cutting paths, and <strong>controller software</strong> runs on the machine and turns those paths into motion, laser power and gas pressure. Most fiber laser cutting machines ship with controller software and a basic nesting module included, so a small job shop can start cutting with the bundled package plus any CAD program that exports clean DXF files. A dedicated third-party CAM/nesting package starts to pay for itself when material spend is high, part mixes change daily, or several machines need one programming workflow.</p>
+<p>This guide covers 2D sheet metal and tube cutting on fiber laser cutting machines from roughly 1.5 kW to 30 kW. It does not cover hobby CO2 lasers, galvo marking software, or 3D five-axis robotic cutting, which use different software stacks.</p>
+<h2>The Three Layers of Laser Cutting Software</h2>
+<p>Every metal laser cutting workflow passes through the same three stages, even when one program covers more than one of them. Knowing which layer a product belongs to prevents the most common buying mistake: paying for a second program that duplicates what the machine already includes.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it does</th>
+<th>Typical output</th>
+<th>Who uses it</th>
+<th>Usually included with the machine?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design (CAD)</td>
+<td>Creates or edits part geometry; unfolds 3D sheet metal parts into flat patterns</td>
+<td>DXF, DWG, STEP</td>
+<td>Design engineer, customer, programmer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>CAM / nesting</td>
+<td>Imports geometry, nests parts on sheets, assigns lead-ins, cut order, micro-joints and process layers</td>
+<td>Nest file or NC program for a specific controller</td>
+<td>Programmer</td>
+<td>Basic nesting: often yes. Advanced nesting: no</td>
+</tr>
+<tr>
+<td>Controller</td>
+<td>Runs the machine: motion, height sensing, laser power, assist gas, piercing, error handling</td>
+<td>Finished parts</td>
+<td>Machine operator</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> if you only buy one extra program, it is almost always in the design layer. The CAM/nesting layer is the only one where a real "bundled vs third-party" decision exists. The controller layer is fixed by the machine you buy.</p>
+<h3>Design Software for Laser Cutting (CAD)</h3>
+<p>Design software for laser cutting produces the clean 2D outline the laser follows. For sheet metal parts that will later be bent, the design program also needs a sheet metal module that unfolds the 3D part into an accurate flat pattern using the correct bend allowance or K-factor. A flat pattern built with the wrong K-factor cuts perfectly and then bends to the wrong size, which is a design error, not a cutting error.</p>
+<p>Two groups of laser cutting design software cover most metal shops:</p>
+<ul>
+<li><strong>3D CAD with sheet metal tools</strong> such as SolidWorks, Autodesk Inventor, Autodesk Fusion, Solid Edge and Onshape. These suit shops that design their own products or receive 3D models from customers, because they generate flat patterns and keep them linked to the 3D model when the design changes.</li>
+<li><strong>2D drafting tools</strong> such as AutoCAD, DraftSight, LibreCAD and QCAD. These suit job shops that receive finished DXF files and only need to clean, scale or modify geometry before nesting.</li>
+</ul>
+<p>The output that matters for cutting is a closed-contour DXF or DWG at 1:1 scale, with no duplicate lines, no open gaps between segments, and splines converted to arcs where the controller requires it. Most cut-quality problems that look like machine faults (small notches at contour joins, missed holes, double cuts) trace back to geometry defects in this file.</p>
+<h3>CAM and Nesting Software</h3>
+<p>CAM/nesting software turns a list of parts into an efficient, machine-ready sheet layout. Its main tasks are placing parts to minimize scrap, choosing the cut sequence to limit heat build-up and tip-up collisions, adding lead-ins and lead-outs away from critical edges, inserting micro-joints so small parts stay in the skeleton, and applying common-line cutting where two parts can share one cut.</p>
+<p>Laser cutting machine software for nesting falls into two tiers:</p>
+<ul>
+<li><strong>Bundled nesting</strong> supplied with the controller, for example CypNest for machines that run Friendess (BOCHU) CypCut. Bundled nesting handles automatic true-shape nesting, lead-ins, micro-joints and common-line cutting, and its output loads directly into the controller without a post-processor.</li>
+<li><strong>Third-party CAM/nesting</strong> such as Lantek, SigmaNEST, Radan, Almacam, ProNest and Metalix cncKad. These add multi-machine programming, remnant tracking, order and inventory integration (ERP/MES), automated quoting and, in some products, combined laser–punch or laser–press brake workflows. Each needs a post-processor that matches your specific controller.</li>
+</ul>
+<p>Nesting quality has a direct cost effect because material is usually the largest variable cost in sheet metal cutting. Shops cutting stainless steel can find material-specific nesting tactics in our guide to <a href="https://arcuscnc.com/nesting-software-strategies-stainless/">nesting techniques for stainless sheet</a>, and a quick utilization estimate is available with the <a href="https://arcuscnc.com/sheet-nesting-calculator/">sheet nesting calculator</a>.</p>
+<h3>Controller Software (Machine Control)</h3>
+<p>Controller software is the laser cutting machine software that runs on the machine's industrial PC or CNC. It reads the nest or NC program and controls axis motion, the capacitive height sensor, focus position, laser power, pulse frequency, assist gas type and pressure, and piercing stages. It also stores the process parameter library: the tested combinations of power, speed, gas, pressure, nozzle and focus for each material and thickness.</p>
+<p>Most Chinese-built fiber laser cutting machines in the 1.5–12 kW range use Friendess (BOCHU) control systems with CypCut software; higher-power machines on the same platform use HypCut. Other controllers found on Chinese machines include Au3tech and Weihong. European and Japanese OEMs typically run proprietary interfaces on their own or on Siemens and Beckhoff CNC platforms.</p>
+<p>The controller determines features that no nesting program can add afterwards: <a href="https://arcuscnc.com/fly-cutting/">fly cutting</a> for grids of small holes, frog-jump motion between contours, multi-stage piercing for thick plate, edge seeking on irregular remnants, and automatic nozzle cleaning and calibration. When comparing machines, compare controller features directly, because a third-party CAM package can only use functions the controller supports.</p>
+<h2>Bundled vs Third-Party Nesting: Which Does Your Shop Need?</h2>
+<p>The decision is not about cut quality. Cut quality is set by the controller's parameter library and the machine itself. The decision is about material utilization, programming time and how many machines and orders the software has to coordinate.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Shop situation</th>
+<th>Recommended software stack</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 laser, stable product range, &lt; 2 shifts</td>
+<td>CAD + bundled nesting</td>
+<td>Bundled nesting already covers true-shape nesting, micro-joints and common-line cutting</td>
+</tr>
+<tr>
+<td><strong>1–2 lasers, high-mix job shop, daily new orders</strong></td>
+<td><strong>CAD + bundled nesting, add third-party CAM when programming becomes the bottleneck</strong></td>
+<td><strong>Most shops in this group reach the limit of bundled nesting through programming time and remnant management, not cut quality</strong></td>
+</tr>
+<tr>
+<td>2+ lasers from different brands</td>
+<td>CAD + third-party CAM with a post-processor for each controller</td>
+<td>One programming workflow, one parts library, one quoting process</td>
+</tr>
+<tr>
+<td>Laser + punch, or laser + press brake planning</td>
+<td>CAD + third-party CAM with the matching modules</td>
+<td>Bundled laser nesting does not program other machines</td>
+</tr>
+<tr>
+<td>ERP-driven production, automated quoting</td>
+<td>CAD + third-party CAM with ERP/MES integration</td>
+<td>Orders, stock and remnants flow without manual re-entry</td>
+</tr>
+<tr>
+<td>Tube and profile cutting</td>
+<td>3D CAD (STEP export) + tube nesting matched to the tube controller</td>
+<td>Tube nesting reads 3D geometry and handles chuck clamping zones and tail waste</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> start with the row that matches your current machine count and order pattern. Move one row down only when a specific limit appears (programming backlog, untracked remnants, multiple controller brands), not because a software demo looked impressive.</p>
+<h2>What Laser Cutting Software Costs</h2>
+<p>Laser cutting software cost has three parts: license, annual maintenance, and the internal time needed to set it up. The figures below are typical ranges reported by resellers and published price lists as of 2026, in USD. Actual pricing depends on region, modules and seat count, so verify with your supplier before budgeting.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Software layer</th>
+<th>Typical cost (USD, as of 2026)</th>
+<th>Billing model</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D drafting CAD</td>
+<td>Free to ~2,000 per year</td>
+<td>Free, perpetual or subscription</td>
+<td>LibreCAD and QCAD are free; AutoCAD LT and DraftSight are paid subscriptions</td>
+</tr>
+<tr>
+<td>3D CAD with sheet metal module</td>
+<td>~700 to ~8,000 per seat per year</td>
+<td>Mostly subscription</td>
+<td>Cloud tools sit at the low end; full desktop suites at the high end</td>
+</tr>
+<tr>
+<td>Bundled nesting</td>
+<td>Included with the machine</td>
+<td>Included</td>
+<td>Upgrades or extra seats may be charged separately</td>
+</tr>
+<tr>
+<td>Third-party CAM/nesting</td>
+<td>~5,000 to 30,000+ per seat (perpetual) or annual subscription</td>
+<td>Perpetual + 15–20% yearly maintenance, or subscription</td>
+<td>Post-processors, tube modules and ERP links are often priced as add-ons</td>
+</tr>
+<tr>
+<td>Controller software</td>
+<td>Included with the machine</td>
+<td>Included</td>
+<td>Feature upgrades depend on the controller vendor</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> the only layer with a large, optional cost is third-party CAM/nesting. Budget for at least two to four weeks of programmer time to build the parts library, material table and post-processor settings, because this setup time often costs more than the first-year license.</p>
+<h3>Payback Calculation for Third-Party Nesting</h3>
+<p>Third-party nesting usually pays back through better material utilization and lower programming time. The calculation below shows how to test that for your shop.</p>
+<p><em>Hypothetical example:</em> a job shop buys 150 tonnes of mild and stainless sheet per year at an average of USD 1,400 per tonne, for an annual material spend of USD 210,000.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Bundled nesting</th>
+<th>Third-party CAM</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material utilization</td>
+<td>72%</td>
+<td>75%</td>
+<td>+3 percentage points</td>
+</tr>
+<tr>
+<td>Material cost per year at equal output</td>
+<td>USD 210,000</td>
+<td>about USD 201,600</td>
+<td>about USD 8,400 saved</td>
+</tr>
+<tr>
+<td>Programming time per week</td>
+<td>12 hours</td>
+<td>8 hours</td>
+<td>4 hours saved</td>
+</tr>
+<tr>
+<td>Programming labor saved per year (USD 35/hour, 48 weeks)</td>
+<td>—</td>
+<td>—</td>
+<td>USD 6,720</td>
+</tr>
+<tr>
+<td><strong>Total annual benefit</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>about USD 15,100</strong></td>
+</tr>
+</tbody>
+</table></figure>
+<p>With a USD 15,000 license and USD 2,500 annual maintenance, payback in this example is a little over one year. If the real utilization gain is only one percentage point and programming time does not change, the saving falls to about USD 2,900 per year, which barely covers the annual maintenance fee, so the license never pays back. Run your own figures with actual scrap weights before buying; the utilization gain is the number software vendors most often overstate. For converting these savings into part prices, see <a href="https://arcuscnc.com/quoting-laser-cutting/">how job shops quote laser cutting</a>.</p>
+<h2>Matching Software to Real Shop Scenarios</h2>
+<p>Each scenario below describes a common type of metal shop and the laser cutting software stack that fits it. Find the one closest to yours.</p>
+<h3>Small Job Shop With One Fiber Laser</h3>
+<p>A small job shop with one 3–6 kW fiber laser cutting machine and customer-supplied DXF files needs a 2D CAD program for cleanup and the bundled nesting and controller software. The main software skills to build are DXF cleanup, layer-based process assignment and use of the controller's parameter library. Buying third-party CAM at this stage usually adds cost without removing a bottleneck.</p>
+<h3>OEM Manufacturer Cutting Its Own Products</h3>
+<p>A manufacturer cutting its own enclosures, brackets or frames needs 3D CAD with a sheet metal module, because flat patterns must stay linked to the 3D design when engineering changes happen. Bundled nesting is often sufficient because the part library is stable and repeat orders can reuse saved nests. The key software decision is setting the correct K-factor and bend tables in CAD so cut blanks bend to size.</p>
+<h3>Multi-Machine or Mixed-Brand Shop</h3>
+<p>A shop running several lasers, especially from different manufacturers, benefits most from third-party CAM/nesting. A single program with a post-processor for each controller lets one programmer schedule work across all machines and keeps one parts library. Confirm that a tested post-processor exists for each exact controller model before purchase, because an untested post-processor can output motion that the controller rejects or runs incorrectly.</p>
+<h3>Tube and Profile Cutting</h3>
+<p>Tube laser cutting software works from 3D geometry, usually STEP files, rather than flat DXF. Tube nesting must account for chuck clamping zones, tail material waste, profile orientation and weld-seam position. Most tube controllers ship with matched tube nesting software, and third-party tube modules exist for shops that program sheet and tube in one system. More background on tube machines is in our overview of <a href="https://arcuscnc.com/tube-laser-cutting-machine/">tube laser cutting machines</a>.</p>
+<h2>Key Features to Check Before Choosing</h2>
+<p>The features below separate laser cutting software that saves time from software that only produces a valid nest. Check them in a demo using your own parts, not the vendor's demo files.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Layer</th>
+<th>Why it matters</th>
+<th>How to test in a demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DXF/DWG import repair</td>
+<td>CAM</td>
+<td>Fixes open contours and duplicate lines automatically</td>
+<td>Import 5 of your own messy customer files</td>
+</tr>
+<tr>
+<td>True-shape automatic nesting</td>
+<td>CAM</td>
+<td>Main driver of material utilization</td>
+<td>Nest a real week of orders and compare scrap with your current layouts</td>
+</tr>
+<tr>
+<td>Common-line cutting and bridges</td>
+<td>CAM</td>
+<td>Fewer pierces and shorter cut paths on rectangular parts</td>
+<td>Nest 20 identical rectangles and check pierce count</td>
+</tr>
+<tr>
+<td>Micro-joints (tabs) control</td>
+<td>CAM</td>
+<td>Keeps small parts from tipping and colliding with the head</td>
+<td>Set tab width per material; check that tabs break cleanly</td>
+</tr>
+<tr>
+<td>Remnant tracking</td>
+<td>CAM</td>
+<td>Reuses offcuts instead of scrapping them</td>
+<td>Save a remnant, then nest a new order onto it</td>
+</tr>
+<tr>
+<td>Post-processor for your controller</td>
+<td>CAM</td>
+<td>Determines whether output runs correctly</td>
+<td>Ask for a reference shop running the same controller model</td>
+</tr>
+<tr>
+<td>Parameter library by material and thickness</td>
+<td>Controller</td>
+<td>Sets cut quality</td>
+<td>Check that libraries exist for every material you cut</td>
+</tr>
+<tr>
+<td>Piercing stages and thick-plate control</td>
+<td>Controller</td>
+<td>Prevents blowouts and lens damage on thick plate</td>
+<td>Compare stage settings for 16–25 mm mild steel</td>
+</tr>
+<tr>
+<td>Height sensing and edge seeking</td>
+<td>Controller</td>
+<td>Keeps standoff stable and finds sheet edges</td>
+<td>Run edge seek on a skewed sheet</td>
+</tr>
+<tr>
+<td>Fly cutting and frog jump</td>
+<td>Controller</td>
+<td>Cuts grid patterns and moves between contours faster</td>
+<td>Time a perforated panel</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> the CAM rows decide material and programming efficiency; the controller rows decide cut quality and reliability. Thick-plate users should read our guide to <a href="https://arcuscnc.com/optimizing-laser-piercing-parameters-for-thick-plate-cutting/">piercing parameters for thick plate</a>, and operators facing height-control alarms can use our <a href="https://arcuscnc.com/troubleshooting-capacitive-sensor-errors/">capacitive height sensor error guide</a>.</p>
+<h2>Limitations and When Other Options Are Better</h2>
+<p>Laser cutting software cannot fix problems that start outside the software, and in some situations a different approach is the better choice.</p>
+<p><strong>When the bundled software is the right answer:</strong> a single-machine shop with stable work should not buy third-party CAM to fix cut quality. Dross, burrs and taper come from parameters, nozzle condition, focus and gas purity, not from the nesting program.</p>
+<p><strong>When third-party CAM is not enough:</strong> if the bottleneck is part handling, sorting or sheet loading, faster programming only moves the queue to the unloading table. Automation hardware or better shop-floor organization solves that, not software.</p>
+<p><strong>When outsourcing programming makes sense:</strong> shops cutting a small number of complex orders each month may get better results paying an experienced programmer per job than training staff on a full CAM package.</p>
+<p><strong>When the machine's controller limits the choice:</strong> some controllers accept only their own file format or a narrow range of post-processors. Check controller compatibility before choosing a CAM package; switching controllers later is far more expensive than switching software.</p>
+<p><strong>When free software stops working:</strong> free CAD tools handle DXF cleanup well but do not produce flat patterns from 3D sheet metal parts, and free nesting tools generally lack controller-specific post-processors and production features such as remnant tracking.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>What software do you need for laser cutting metal?</h3>
+<p>You need design software to create the part geometry, nesting software to lay parts out on the sheet, and controller software to run the machine. Most fiber laser cutting machines include the controller software and a basic nesting module, so the only extra purchase is usually a CAD program that exports clean DXF or DWG files. Third-party CAM/nesting becomes worthwhile when a shop runs several machines, handles many new orders each day, or needs ERP integration and remnant tracking.</p>
+<h3>Can I use AutoCAD or SolidWorks for laser cutting?</h3>
+<p>Yes. AutoCAD and SolidWorks are both widely used as design software for laser cutting, but neither drives the machine directly. AutoCAD exports 2D DXF or DWG files; SolidWorks unfolds 3D sheet metal parts into flat patterns and exports them as DXF. The DXF is then imported into nesting or controller software, which adds lead-ins, cut order and process parameters before cutting.</p>
+<h3>Is there free software for laser cutting?</h3>
+<p>Free 2D CAD programs such as LibreCAD and QCAD can create and clean DXF files for laser cutting. Free tools rarely cover the other two layers for industrial metal cutting: production nesting with a controller-specific post-processor, and machine control software, which comes with the machine. For a metal shop, the realistic free option is free CAD combined with the nesting and controller software bundled with the laser.</p>
+<h3>What is CypCut?</h3>
+<p>CypCut is the controller software developed by Shanghai Friendess Electronic Technology (BOCHU) for 2D fiber laser cutting machines. It imports DXF and other drawing files, assigns process parameters by layer, controls piercing, height sensing and cutting motion, and includes functions such as fly cutting and edge seeking. It is used on a large share of Chinese-built fiber laser cutting machines, and Friendess also offers CypNest for nesting and HypCut for higher-power machines.</p>
+<h3>Does nesting software improve cut quality?</h3>
+<p>Nesting software does not change edge quality, which depends on laser power, speed, assist gas, focus position and nozzle condition set in the controller. Nesting software affects quality indirectly: a good cut sequence limits heat build-up in small parts, correctly placed lead-ins avoid marks on visible edges, and micro-joints stop parts tipping into the head path. Material utilization and programming time are its main benefits.</p>
+<h3>How much does laser cutting software cost?</h3>
+<p>Controller software and basic nesting are normally included with the machine. 2D CAD ranges from free to about USD 2,000 per year, and 3D CAD with sheet metal tools typically costs about USD 700 to 8,000 per seat per year. Third-party CAM/nesting is the largest optional cost, typically about USD 5,000 to 30,000 or more per seat plus 15–20% annual maintenance, as of 2026. Verify current pricing with resellers in your region.</p>
+<h3>Can I use one software package for machines from different manufacturers?</h3>
+<p>Yes, if the CAM/nesting package has a tested post-processor for every controller in the shop. Third-party CAM systems are designed for mixed-brand shops, while bundled nesting usually supports only its own controller. Ask the vendor for a reference customer running your exact controller model and software version, because post-processor quality varies between controllers. Before buying a new machine, check its controller against our <a href="https://arcuscnc.com/buying-a-fiber-laser-cutter/">fiber laser cutter buying checklist</a>.</p>
+  </article>
+</section>
+
+</div>
+<div class="toast" id="toast">已复制</div>
+<script>
+function toast(msg) {
+  var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(function () { t.classList.remove('show'); }, 1400);
+}
+function copyText(text, el) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function () { toast('已复制'); }, function () { fallback(el); });
+  } else { fallback(el); }
+}
+function fallback(el) {
+  try {
+    if (el.select) { el.focus(); el.select(); }
+    else { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    document.execCommand('copy') ? toast('已复制') : toast('已选中，请按 Ctrl/Cmd + C');
+  } catch (e) { toast('已选中，请按 Ctrl/Cmd + C'); }
+}
+document.getElementById('copy-code').addEventListener('click', function () {
+  var c = document.getElementById('code'); copyText(c.value, c);
+});
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.getAttribute('data-copy')); copyText(el.textContent.trim(), el);
+  });
+});
+</script>
+</body>
+</html>
