@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CypCut Parameters: Layers, Piercing, Lead-ins &amp; Libraries</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1d2430; --muted: #5d6878;
+  --line: #dde2e8; --accent: #1f5fae; --accent-soft: #e8f0fb; --code-bg: #0f1720; --code-text: #d7e1ee;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #11151b; --card: #1a2029; --text: #e6ebf2; --muted: #9aa6b5;
+    --line: #2c3540; --accent: #6ea8ff; --accent-soft: #1c2a3d; --code-bg: #0b0f14; --code-text: #cfd9e6; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 24px 16px 64px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.panel h2.label { margin: 0 0 12px; font-size: 15px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.field { display: grid; grid-template-columns: 130px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); }
+.field:first-of-type { border-top: 0; }
+.field .k { color: var(--muted); font-size: 14px; }
+.field .v { word-break: break-word; }
+.field .n { color: var(--muted); font-size: 12px; }
+button { font: inherit; font-size: 14px; border: 1px solid var(--accent); background: var(--accent); color: #fff;
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+button.ghost { background: transparent; color: var(--accent); }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.toolbar .hint { color: var(--muted); font-size: 13px; }
+textarea { width: 100%; height: 260px; background: var(--code-bg); color: var(--code-text); border: 0; border-radius: 8px;
+  padding: 12px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; resize: vertical; }
+article h1 { font-size: 30px; line-height: 1.25; margin: 0 0 18px; }
+article h2 { font-size: 23px; margin: 36px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+article h3 { font-size: 18px; margin: 26px 0 8px; }
+article a { color: var(--accent); }
+article figure { margin: 18px 0; overflow-x: auto; }
+article table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 560px; }
+article th, article td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+article th { background: var(--accent-soft); }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg);
+  padding: 8px 14px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.show { opacity: 1; }
+@media (max-width: 600px) { .field { grid-template-columns: 1fr; } article h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="panel">
+  <h2 class="label">SEO 设置（粘贴到 Rank Math / Yoast）</h2>
+  <div class="field"><div class="k">SEO Title<div class="n">57 字符</div></div><div class="v" id="f-title">CypCut Parameters: Layers, Piercing, Lead-ins &amp; Libraries</div><button class="ghost" data-copy="f-title">复制</button></div>
+  <div class="field"><div class="k">Meta Description<div class="n">142 字符</div></div><div class="v" id="f-meta">How CypCut parameters are organized and set: layer settings, multi-stage piercing, lead-ins, kerf compensation and a reusable process library.</div><button class="ghost" data-copy="f-meta">复制</button></div>
+  <div class="field"><div class="k">URL slug</div><div class="v" id="f-slug">cypcut-parameter-guide</div><button class="ghost" data-copy="f-slug">复制</button></div>
+  <div class="field"><div class="k">文章标题（H1）</div><div class="v" id="f-h1">CypCut Parameter Setup: Layers, Piercing, Lead-ins and Cutting Process Libraries</div><button class="ghost" data-copy="f-h1">复制</button></div>
+</section>
+
+<section class="panel">
+  <h2 class="label">WordPress HTML 代码（正文 + FAQ Schema，共 7 条 FAQ）</h2>
+  <div class="toolbar">
+    <button id="copy-code">一键复制 HTML</button>
+    <span class="hint">古腾堡：添加"自定义 HTML"区块后粘贴，或在右上角"⋮ → 代码编辑器"中粘贴。经典编辑器：切换到"文本"标签后粘贴。</span>
+  </div>
+  <textarea id="code" readonly>&lt;p&gt;CypCut parameters are organized in three levels: &lt;strong&gt;global parameters&lt;/strong&gt; set machine-wide motion behavior, &lt;strong&gt;layer parameters&lt;/strong&gt; hold the complete cutting process for every contour drawn in that layer color, and &lt;strong&gt;graphic process settings&lt;/strong&gt; such as lead-ins, kerf compensation and micro-joints are attached to individual parts in the drawing. Most cut-quality problems are solved in the layer parameters, most edge-mark and dimension problems are solved in the graphic process settings, and most cycle-time problems are solved in the global parameters. The fastest way to stable results is to tune in a fixed order (height and focus, then gas, then speed and power, then piercing, then lead-ins) and save each proven combination of material, thickness, gas and nozzle in a process library so operators load it instead of retyping it.&lt;/p&gt;
+&lt;p&gt;This guide applies to CypCut 2D sheet cutting on Friendess (BOCHU) FSCUT control systems with a BCS100 capacitive height controller. Menu names and the exact list of fields differ between CypCut versions, and HypCut (high-power) and tube cutting software use different screens, so treat the field names here as a map and confirm them in your version&#x27;s manual.&lt;/p&gt;
+&lt;h2&gt;How CypCut Parameters Are Organized&lt;/h2&gt;
+&lt;p&gt;CypCut separates settings by how often they change. Knowing which level a setting lives on stops the most common mistake: changing a machine-wide value to fix one part.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Level&lt;/th&gt;
+&lt;th&gt;Where it is set&lt;/th&gt;
+&lt;th&gt;What it controls&lt;/th&gt;
+&lt;th&gt;How often it changes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Global parameters&lt;/td&gt;
+&lt;td&gt;Global or machine parameter settings&lt;/td&gt;
+&lt;td&gt;Travel speed and acceleration between contours, lift mode (normal lift or leapfrog), return position, edge seeking behavior&lt;/td&gt;
+&lt;td&gt;Rarely; after machine commissioning or a motion upgrade&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Layer parameters&lt;/td&gt;
+&lt;td&gt;Layer (process) parameter dialog, one tab per layer color&lt;/td&gt;
+&lt;td&gt;Cutting speed, laser power, frequency, duty cycle, gas type and pressure, cutting height, focus, piercing stages, slow start, laser-off delay&lt;/td&gt;
+&lt;td&gt;Every time material, thickness, gas or nozzle changes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Graphic process settings&lt;/td&gt;
+&lt;td&gt;Applied to selected parts in the drawing&lt;/td&gt;
+&lt;td&gt;Lead-in and lead-out, kerf compensation, micro-joints, cutting sequence, start points, cooling points, FlyCut grouping&lt;/td&gt;
+&lt;td&gt;Every new job&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; if a problem appears on every part of one material, change the layer parameters. If it appears only at the start or end of a contour, change the graphic process settings. If it only costs time, look at the global parameters.&lt;/p&gt;
+&lt;p&gt;For how CypCut fits alongside CAD and nesting software, see our overview of the &lt;a href=&quot;https://arcuscnc.com/laser-cutting-software/&quot;&gt;three layers of laser cutting software&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Layer Parameters: What Each Setting Controls&lt;/h2&gt;
+&lt;p&gt;Each CypCut layer stores a full cutting recipe. Every contour drawn in that layer color is cut with that recipe, so layers are also the tool for giving different features of the same part different settings.&lt;/p&gt;
+&lt;h3&gt;The Core Cutting Settings&lt;/h3&gt;
+&lt;p&gt;The table below lists the layer parameters that decide edge quality, what each one controls, and which direction to adjust it.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Layer parameter&lt;/th&gt;
+&lt;th&gt;What it controls&lt;/th&gt;
+&lt;th&gt;Raise it when&lt;/th&gt;
+&lt;th&gt;Lower it when&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Cutting speed&lt;/td&gt;
+&lt;td&gt;Energy per millimeter of cut&lt;/td&gt;
+&lt;td&gt;Edge shows burn marks, wide kerf, or heavy oxidation&lt;/td&gt;
+&lt;td&gt;Cut does not go through, sparks spray upward, dross hangs at the bottom&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peak power (%)&lt;/td&gt;
+&lt;td&gt;Laser output during cutting&lt;/td&gt;
+&lt;td&gt;Cut fails to penetrate at the target speed&lt;/td&gt;
+&lt;td&gt;Kerf is wide or the top edge melts on thin sheet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Frequency and duty cycle&lt;/td&gt;
+&lt;td&gt;Pulse behavior; continuous wave at 100% duty&lt;/td&gt;
+&lt;td&gt;Use continuous wave for straight cutting on most sheet&lt;/td&gt;
+&lt;td&gt;Use pulsed output for small holes, sharp corners and fine features to reduce overheating&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gas type&lt;/td&gt;
+&lt;td&gt;Cutting chemistry: oxygen burns, nitrogen and air melt&lt;/td&gt;
+&lt;td&gt;Switch to nitrogen when an oxide-free edge is required&lt;/td&gt;
+&lt;td&gt;Switch to oxygen for thick mild steel where speed per kW matters more than edge color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gas pressure&lt;/td&gt;
+&lt;td&gt;Melt ejection&lt;/td&gt;
+&lt;td&gt;Dross sticks to the bottom edge&lt;/td&gt;
+&lt;td&gt;Edge is rough from turbulence or gas use is excessive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cutting height&lt;/td&gt;
+&lt;td&gt;Nozzle-to-sheet standoff held by the BCS100&lt;/td&gt;
+&lt;td&gt;Spatter reaches the nozzle or the head touches tipped parts&lt;/td&gt;
+&lt;td&gt;Gas flow is not reaching the kerf and dross increases&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Focus position&lt;/td&gt;
+&lt;td&gt;Where the beam waist sits relative to the sheet&lt;/td&gt;
+&lt;td&gt;Moving focus deeper helps thick nitrogen cuts&lt;/td&gt;
+&lt;td&gt;Moving focus upward helps thin sheet and oxygen cutting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; change one parameter at a time and cut a short test line after each change. Changing speed and pressure together hides which one fixed the problem. Gas choice is explained in our &lt;a href=&quot;https://arcuscnc.com/assist-gas-selection-laser-cutting-guide/&quot;&gt;assist gas selection guide&lt;/a&gt;, and focus behavior is explained in our guide to &lt;a href=&quot;https://arcuscnc.com/setting-the-laser-focus-position/&quot;&gt;setting the laser focus position&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Published speed and power figures are a starting point, not a final value. Laser source brand, cutting head optics, nozzle size and gas purity all move the working window, so a value copied from another machine usually needs adjustment. For stainless steel starting speeds by thickness, use our &lt;a href=&quot;https://arcuscnc.com/laser-cutting-machine-stainless-steel-speed/&quot;&gt;stainless steel cutting speed chart&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Start and End Settings Inside the Layer&lt;/h3&gt;
+&lt;p&gt;Three layer settings control what happens at the beginning and end of each contour, where most visible defects start.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Slow start (slow lead-in):&lt;/strong&gt; the cutting head runs at reduced speed for a short distance after piercing, so the cut stabilizes before reaching full speed. It prevents a burned or unseparated section right after the pierce point. Increase the slow-start distance on thick plate and on oxygen cutting.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Laser-off delay:&lt;/strong&gt; keeps the beam on briefly at the end of a contour so the last millimeter separates fully. Too long a delay leaves a burn mark at the closing point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Corner and speed-related power control:&lt;/strong&gt; reduces power automatically when the head slows down at corners, preventing burned corners on thin sheet. If corners burn while straight edges are clean, check this setting before lowering power for the whole layer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Planning Layers for One Part&lt;/h3&gt;
+&lt;p&gt;Assigning features to separate layers lets one part be cut with several recipes. A typical layer plan for a sheet metal part looks like this:&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Layer use&lt;/th&gt;
+&lt;th&gt;Typical difference from the main contour layer&lt;/th&gt;
+&lt;th&gt;Why&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Main outer contours&lt;/td&gt;
+&lt;td&gt;Reference recipe for the material and thickness&lt;/td&gt;
+&lt;td&gt;Highest edge-quality priority&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Small holes (diameter close to sheet thickness)&lt;/td&gt;
+&lt;td&gt;Lower speed, pulsed output, shorter lead-in&lt;/td&gt;
+&lt;td&gt;Prevents oval or burned holes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fine slots and text cut through&lt;/td&gt;
+&lt;td&gt;Pulsed output, reduced power&lt;/td&gt;
+&lt;td&gt;Limits heat build-up in narrow features&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Surface marking or scoring lines&lt;/td&gt;
+&lt;td&gt;Low power, no piercing, cut does not penetrate&lt;/td&gt;
+&lt;td&gt;Bend lines or part numbers without separate marking equipment&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Do-not-cut reference geometry&lt;/td&gt;
+&lt;td&gt;Layer disabled for output&lt;/td&gt;
+&lt;td&gt;Keeps reference lines in the file without cutting them&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; start with one layer per material and thickness and add feature layers only when a specific feature fails with the main recipe. Every extra layer is another recipe to maintain in the process library.&lt;/p&gt;
+&lt;h2&gt;Piercing Setup in CypCut&lt;/h2&gt;
+&lt;p&gt;Piercing parameters sit inside each layer and run before the cutting recipe starts. The piercing mode decides how many stages the pierce uses, and each stage has its own height, power, frequency, duty cycle, gas, pressure, focus and dwell time.&lt;/p&gt;
+&lt;h3&gt;Choosing the Piercing Mode&lt;/h3&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Material thickness (mild steel, oxygen)&lt;/th&gt;
+&lt;th&gt;Recommended piercing mode&lt;/th&gt;
+&lt;th&gt;Reason&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Up to about 3 mm&lt;/td&gt;
+&lt;td&gt;No separate pierce, or a short single-stage pierce&lt;/td&gt;
+&lt;td&gt;The cut parameters penetrate almost instantly&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;About 4–10 mm&lt;/td&gt;
+&lt;td&gt;Single-stage pulsed pierce&lt;/td&gt;
+&lt;td&gt;Controlled pulses open the hole without blowing molten metal back at the nozzle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;About 12 mm and above&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Two- or three-stage progressive pierce&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Starts high with low duty cycle, then steps closer and stronger, protecting the protective lens from spatter&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Thick plate in long production runs&lt;/td&gt;
+&lt;td&gt;Multi-stage pierce plus pre-piercing&lt;/td&gt;
+&lt;td&gt;All holes are pierced first, then cut, so heat from piercing does not affect cutting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; thickness bands shift with laser power. A higher-power source moves each band toward thicker material; stainless and aluminum with nitrogen usually need more conservative piercing than mild steel of the same thickness. Treat these bands as typical starting points and confirm them with a test pierce on your material.&lt;/p&gt;
+&lt;p&gt;In a multi-stage pierce, the first stage normally uses a higher nozzle height, lower duty cycle and lower power to start the hole without heavy back-spatter. Later stages move closer, raise duty cycle and power, and finish the hole. A short dwell between the last stage and the cut start prevents the cut from beginning in an incompletely opened hole.&lt;/p&gt;
+&lt;p&gt;The physics behind frequency, duty cycle and pierce focus is covered in our guide to &lt;a href=&quot;https://arcuscnc.com/optimizing-laser-piercing-parameters-for-thick-plate-cutting/&quot;&gt;multi-stage piercing for thick plate&lt;/a&gt;. Stainless steel users who see a raised burr around the pierce point should read our guide to &lt;a href=&quot;https://arcuscnc.com/burr-free-laser-piercing-stainless/&quot;&gt;burr-free piercing on stainless steel&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Pre-Piercing and Cooling Points&lt;/h3&gt;
+&lt;p&gt;Pre-piercing pierces every contour on the sheet first and then cuts them in sequence. It reduces the risk that a hot, just-cut area affects the next pierce, and it is most useful on thick mild steel. Cooling points pause the beam at a selected position, typically at a sharp corner on thick plate, so heat dissipates before the head continues. Both add cycle time, so apply them only to the material and thickness ranges that need them.&lt;/p&gt;
+&lt;h2&gt;Lead-ins, Lead-outs and Kerf Compensation&lt;/h2&gt;
+&lt;p&gt;Lead-ins, lead-outs and compensation are graphic process settings, not layer settings. They are applied to selected parts and decide where each contour starts, where it ends, and whether the finished part matches the drawing dimensions.&lt;/p&gt;
+&lt;h3&gt;Lead-in and Lead-out Rules&lt;/h3&gt;
+&lt;p&gt;The lead-in moves the pierce point off the finished edge so the pierce mark lands in scrap. The lead-out carries the cut past the closing point so the part separates cleanly.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;Lead-in type&lt;/th&gt;
+&lt;th&gt;Lead-in position&lt;/th&gt;
+&lt;th&gt;Reason&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Outer contour&lt;/td&gt;
+&lt;td&gt;Straight line or line plus arc&lt;/td&gt;
+&lt;td&gt;On a corner or a straight edge on the scrap side&lt;/td&gt;
+&lt;td&gt;Pierce mark falls outside the part; corner starts hide the closing mark&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Inner hole, medium to large&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Arc lead-in from the hole center side&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;On a straight section or the longest arc&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Arc entry avoids a notch where the lead meets the contour&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Small hole (close to sheet thickness)&lt;/td&gt;
+&lt;td&gt;Short straight lead-in from near the center&lt;/td&gt;
+&lt;td&gt;Center area of the hole&lt;/td&gt;
+&lt;td&gt;Lead-in must fit inside the hole without crossing the edge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Visible cosmetic edge&lt;/td&gt;
+&lt;td&gt;Lead-in placed on a hidden edge&lt;/td&gt;
+&lt;td&gt;Edge that will be bent, welded or covered&lt;/td&gt;
+&lt;td&gt;Keeps the start and end marks off visible surfaces&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Thick plate&lt;/td&gt;
+&lt;td&gt;Longer lead-in&lt;/td&gt;
+&lt;td&gt;Away from sharp corners&lt;/td&gt;
+&lt;td&gt;Gives the pierce and slow start room to stabilize before the edge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; the lead-in must always start on the scrap side of the contour, outside an outer contour and inside a hole. A lead-in that is too long on small holes cuts into the part edge; a lead-in that is too short on thick plate puts the pierce crater on the finished edge.&lt;/p&gt;
+&lt;p&gt;Overcut or a small seal gap at the closing point controls how the contour ends. A slight overcut guarantees separation; a seal gap leaves a tiny uncut section that acts as a micro-joint. Excess overcut leaves a visible notch where the cut passes the start point.&lt;/p&gt;
+&lt;h3&gt;Kerf Compensation&lt;/h3&gt;
+&lt;p&gt;The laser removes a strip of material equal to the kerf width, so an uncompensated outer contour comes out undersized and an uncompensated hole comes out oversized. Kerf compensation offsets the cutting path by half the kerf width: outward for outer contours and inward for holes.&lt;/p&gt;
+&lt;p&gt;Measure the kerf on a test cut for each material, thickness and nozzle combination, and store the compensation value together with that recipe. Kerf width changes with focus position, nozzle size and gas pressure, so a compensation value that was correct before a nozzle change may no longer be correct after it.&lt;/p&gt;
+&lt;h3&gt;Micro-joints and Cutting Sequence&lt;/h3&gt;
+&lt;p&gt;Micro-joints are short uncut sections that hold small parts in the skeleton so they cannot tip up into the head path. Use them on parts small enough to fall through or rotate between support slats. Cut inner contours before outer contours, and cut small parts before large ones, so each part stays supported by the sheet until its last contour is finished.&lt;/p&gt;
+&lt;h2&gt;FlyCut and Leapfrog: Motion Settings That Depend on Your Layers&lt;/h2&gt;
+&lt;p&gt;CypCut FlyCut cuts rows of identical small shapes, such as grids of round or square holes, in a continuous motion without stopping and lifting between shapes. Leapfrog (frog jump) shortens travel between contours by lifting and moving the head along an arc instead of up, across and down.&lt;/p&gt;
+&lt;p&gt;Both functions change motion, not the cutting recipe, but they only work with suitable layer settings. FlyCut needs a pierce that is fast enough to happen on the move, which in practice limits it to thin sheet with short or no piercing, and it raises the risk of tipped parts because the head does not lift between shapes. Leapfrog lifts the head less than a normal lift, so micro-joints and a correct cutting sequence become more important to avoid collisions.&lt;/p&gt;
+&lt;p&gt;The full FlyCut setup steps and risks are in our guide to &lt;a href=&quot;https://arcuscnc.com/fly-cutting/&quot;&gt;fly cutting&lt;/a&gt;, and leapfrog settings are covered in our guide to &lt;a href=&quot;https://arcuscnc.com/frog-jump-cutting/&quot;&gt;frog jump cutting&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Building a Reusable Process Library&lt;/h2&gt;
+&lt;p&gt;A process library stores proven layer parameters so the same material, thickness, gas and nozzle always load the same recipe. Without a library, each operator rebuilds parameters from memory and cut quality varies between shifts.&lt;/p&gt;
+&lt;h3&gt;What to Store for Each Recipe&lt;/h3&gt;
+&lt;p&gt;Each entry should capture everything that changes the result, not only speed and power. A recipe without the nozzle size and focus value cannot be reproduced.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Example entry&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Material and grade&lt;/td&gt;
+&lt;td&gt;Stainless 304&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Thickness&lt;/td&gt;
+&lt;td&gt;3 mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gas and purity&lt;/td&gt;
+&lt;td&gt;Nitrogen, 99.99%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nozzle type and diameter&lt;/td&gt;
+&lt;td&gt;Single-layer, 2.0 mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Laser source power&lt;/td&gt;
+&lt;td&gt;6 kW&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Layer recipe&lt;/td&gt;
+&lt;td&gt;Speed, power, frequency, duty cycle, pressure, height, focus&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Piercing stages&lt;/td&gt;
+&lt;td&gt;Mode and values for each stage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kerf compensation&lt;/td&gt;
+&lt;td&gt;Measured value for this recipe&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Date, operator and test result&lt;/td&gt;
+&lt;td&gt;Date tested, who tested, edge quality notes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; the example values show the format, not recommended settings. A consistent naming pattern such as material_thickness_gas_nozzle (for example SS304_3mm_N2_D2.0) lets operators find the right recipe without opening each one.&lt;/p&gt;
+&lt;h3&gt;Library Management Practices&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test before saving:&lt;/strong&gt; cut a test coupon with straight edges, a small hole and a sharp corner, and save the recipe only after all three pass inspection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Restrict editing:&lt;/strong&gt; let operators load recipes and let only the process owner overwrite them, so a temporary adjustment does not become the new standard.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Record changes:&lt;/strong&gt; note the date and reason whenever a recipe changes, such as a new gas supplier or a nozzle type change.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Back up the library:&lt;/strong&gt; export the parameter files to a separate drive regularly and before any software update or industrial PC replacement.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Re-validate after hardware changes:&lt;/strong&gt; a new protective lens, nozzle type, laser source or cutting head can shift the working window, so re-test the most-used recipes after any of these changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tuning Order and Troubleshooting Table&lt;/h2&gt;
+&lt;p&gt;Tuning in a fixed order prevents chasing one problem with the wrong parameter. Confirm the hardware first: clean protective lens, centered nozzle, calibrated BCS100 height controller and correct gas purity. Then tune in this order: cutting height and focus, gas type and pressure, speed and power, piercing, slow start, and finally lead-ins and compensation.&lt;/p&gt;
+&lt;figure class=&quot;wp-block-table&quot;&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Symptom&lt;/th&gt;
+&lt;th&gt;Check first&lt;/th&gt;
+&lt;th&gt;Check next&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Dross on the bottom edge&lt;/td&gt;
+&lt;td&gt;Gas pressure, focus position&lt;/td&gt;
+&lt;td&gt;Cutting speed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cut does not go through&lt;/td&gt;
+&lt;td&gt;Cutting speed, focus position&lt;/td&gt;
+&lt;td&gt;Power, protective lens condition&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Burn mark or unseparated section right after the pierce&lt;/td&gt;
+&lt;td&gt;Slow start distance and speed&lt;/td&gt;
+&lt;td&gt;Pierce dwell time&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pierce blowout or spatter on the nozzle&lt;/td&gt;
+&lt;td&gt;Number of pierce stages, first-stage height&lt;/td&gt;
+&lt;td&gt;First-stage duty cycle and power&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Burned corners on thin sheet&lt;/td&gt;
+&lt;td&gt;Corner power control&lt;/td&gt;
+&lt;td&gt;Pulsed output for the corner-heavy layer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Oval or burned small holes&lt;/td&gt;
+&lt;td&gt;Separate small-hole layer with lower speed&lt;/td&gt;
+&lt;td&gt;Lead-in length, pulsed output&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notch where the contour closes&lt;/td&gt;
+&lt;td&gt;Overcut length, lead-in type&lt;/td&gt;
+&lt;td&gt;Laser-off delay&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Parts undersized or holes oversized&lt;/td&gt;
+&lt;td&gt;Kerf compensation direction and value&lt;/td&gt;
+&lt;td&gt;Focus and nozzle changes since the last measurement&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Head collides with tipped parts&lt;/td&gt;
+&lt;td&gt;Micro-joints, cutting sequence&lt;/td&gt;
+&lt;td&gt;Lift mode (leapfrog) and FlyCut use&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Height alarms or unstable standoff&lt;/td&gt;
+&lt;td&gt;BCS100 calibration, nozzle and ceramic ring&lt;/td&gt;
+&lt;td&gt;Grounding and cable connections&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;How to read the table:&lt;/strong&gt; work through the first column before touching the second. If a symptom appears suddenly on a recipe that worked before, suspect hardware (lens, nozzle, gas) before changing parameters. Height-control alarms are covered in our guide to &lt;a href=&quot;https://arcuscnc.com/troubleshooting-capacitive-sensor-errors/&quot;&gt;capacitive sensor errors&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Limitations of Parameter Tuning&lt;/h2&gt;
+&lt;p&gt;CypCut parameters can only control what the hardware allows. Several common problems cannot be fixed in software.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When the hardware is the cause:&lt;/strong&gt; a contaminated protective lens, an off-center nozzle, a damaged ceramic ring or low gas purity produce the same symptoms as bad parameters. Adjusting parameters to compensate for worn hardware creates recipes that fail as soon as the part is replaced.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When parameters from another machine do not transfer:&lt;/strong&gt; recipes depend on the laser source, cutting head optics, nozzle and gas supply. A parameter file from another machine, even another CypCut machine, is a starting point that needs re-testing, not a finished recipe.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When a different software screen applies:&lt;/strong&gt; HypCut on high-power machines and tube cutting software organize parameters differently, and some fields described here may be named or grouped differently in your CypCut version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When the material is the limit:&lt;/strong&gt; highly reflective metals, heavily rusted or painted plate, and coated sheet can fall outside a stable working window regardless of parameters. Material preparation or a different process may be the better answer.&lt;/p&gt;
+&lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;
+&lt;h3&gt;What are the most important CypCut parameters to set first?&lt;/h3&gt;
+&lt;p&gt;Set cutting height and focus position first, then gas type and pressure, then cutting speed and power. These parameters decide whether the cut penetrates and how much dross remains. Piercing, slow start, lead-ins and kerf compensation come next, because they only affect the start, end and dimensions of each contour. Changing one parameter at a time and cutting a short test line after each change makes it clear which setting fixed the problem.&lt;/p&gt;
+&lt;h3&gt;How do I save and reuse cutting parameters in CypCut?&lt;/h3&gt;
+&lt;p&gt;CypCut stores cutting parameters per layer, and proven layer parameters can be saved to a material or process library and loaded for later jobs. Save each recipe under a name that includes material, thickness, gas and nozzle, for example SS304_3mm_N2_D2.0, so operators can find it quickly. Export the library to a backup drive before software updates or industrial PC replacement, and re-test saved recipes after any change of nozzle, lens or laser source.&lt;/p&gt;
+&lt;h3&gt;Can I copy CypCut parameters from another machine?&lt;/h3&gt;
+&lt;p&gt;You can import parameters from another machine, but treat them as a starting point. Cutting results depend on the laser source, cutting head optics, nozzle type, gas purity and pressure delivery, and these differ between machines even when both run CypCut. Cut a test coupon with a straight edge, a small hole and a corner, adjust focus, pressure and speed as needed, and save the adjusted recipe as a new entry.&lt;/p&gt;
+&lt;h3&gt;What is slow start in CypCut?&lt;/h3&gt;
+&lt;p&gt;Slow start is a layer setting that runs the cutting head at reduced speed for a short distance after the pierce, before accelerating to full cutting speed. It lets the cut stabilize so the first section of the contour separates cleanly instead of showing burn marks or an uncut section. Thick plate and oxygen cutting usually need a longer slow-start distance than thin sheet cut with nitrogen.&lt;/p&gt;
+&lt;h3&gt;How do I set lead-ins for small holes in CypCut?&lt;/h3&gt;
+&lt;p&gt;Use a short straight lead-in starting near the center of the hole, so the lead-in fits inside the hole without crossing its edge. For holes with a diameter close to the sheet thickness, place them on a separate layer with lower speed and pulsed output, because the main contour recipe usually overheats small features. Check the finished hole for roundness and a notch at the closing point, and adjust overcut if needed.&lt;/p&gt;
+&lt;h3&gt;What is CypCut FlyCut and when should I use it?&lt;/h3&gt;
+&lt;p&gt;CypCut FlyCut cuts rows of identical small shapes, such as grids of holes in perforated panels, in a continuous motion without stopping or lifting between shapes. It can greatly reduce cycle time on thin sheet, but it needs fast or no piercing and raises the risk of tipped parts and slightly oval holes at high speed. It is best suited to thin sheet with regular hole patterns and is not suited to thick plate.&lt;/p&gt;
+&lt;h3&gt;Why does the pierce point burn or blow out in CypCut?&lt;/h3&gt;
+&lt;p&gt;A burned or blown-out pierce usually means the piercing recipe delivers too much energy too early or too close to the sheet. Add a piercing stage, start the first stage at a higher nozzle height with lower duty cycle and power, and add a short dwell before the cut begins. If the problem started suddenly on a recipe that previously worked, check the protective lens, nozzle and gas pressure before changing parameters.&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What are the most important CypCut parameters to set first?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Set cutting height and focus position first, then gas type and pressure, then cutting speed and power. These parameters decide whether the cut penetrates and how much dross remains. Piercing, slow start, lead-ins and kerf compensation come next, because they only affect the start, end and dimensions of each contour. Changing one parameter at a time and cutting a short test line after each change makes it clear which setting fixed the problem.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;How do I save and reuse cutting parameters in CypCut?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;CypCut stores cutting parameters per layer, and proven layer parameters can be saved to a material or process library and loaded for later jobs. Save each recipe under a name that includes material, thickness, gas and nozzle, for example SS304_3mm_N2_D2.0, so operators can find it quickly. Export the library to a backup drive before software updates or industrial PC replacement, and re-test saved recipes after any change of nozzle, lens or laser source.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Can I copy CypCut parameters from another machine?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;You can import parameters from another machine, but treat them as a starting point. Cutting results depend on the laser source, cutting head optics, nozzle type, gas purity and pressure delivery, and these differ between machines even when both run CypCut. Cut a test coupon with a straight edge, a small hole and a corner, adjust focus, pressure and speed as needed, and save the adjusted recipe as a new entry.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What is slow start in CypCut?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Slow start is a layer setting that runs the cutting head at reduced speed for a short distance after the pierce, before accelerating to full cutting speed. It lets the cut stabilize so the first section of the contour separates cleanly instead of showing burn marks or an uncut section. Thick plate and oxygen cutting usually need a longer slow-start distance than thin sheet cut with nitrogen.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;How do I set lead-ins for small holes in CypCut?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;Use a short straight lead-in starting near the center of the hole, so the lead-in fits inside the hole without crossing its edge. For holes with a diameter close to the sheet thickness, place them on a separate layer with lower speed and pulsed output, because the main contour recipe usually overheats small features. Check the finished hole for roundness and a notch at the closing point, and adjust overcut if needed.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What is CypCut FlyCut and when should I use it?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;CypCut FlyCut cuts rows of identical small shapes, such as grids of holes in perforated panels, in a continuous motion without stopping or lifting between shapes. It can greatly reduce cycle time on thin sheet, but it needs fast or no piercing and raises the risk of tipped parts and slightly oval holes at high speed. It is best suited to thin sheet with regular hole patterns and is not suited to thick plate.&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;Why does the pierce point burn or blow out in CypCut?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;A burned or blown-out pierce usually means the piercing recipe delivers too much energy too early or too close to the sheet. Add a piercing stage, start the first stage at a higher nozzle height with lower duty cycle and power, and add a short dwell before the cut begins. If the problem started suddenly on a recipe that previously worked, check the protective lens, nozzle and gas pressure before changing parameters.&quot;
+      }
+    }
+  ]
+}
+&lt;/script&gt;
+</textarea>
+</section>
+
+<section class="panel">
+  <h2 class="label">可视化预览</h2>
+  <article>
+    <h1>CypCut Parameter Setup: Layers, Piercing, Lead-ins and Cutting Process Libraries</h1>
+    <p>CypCut parameters are organized in three levels: <strong>global parameters</strong> set machine-wide motion behavior, <strong>layer parameters</strong> hold the complete cutting process for every contour drawn in that layer color, and <strong>graphic process settings</strong> such as lead-ins, kerf compensation and micro-joints are attached to individual parts in the drawing. Most cut-quality problems are solved in the layer parameters, most edge-mark and dimension problems are solved in the graphic process settings, and most cycle-time problems are solved in the global parameters. The fastest way to stable results is to tune in a fixed order (height and focus, then gas, then speed and power, then piercing, then lead-ins) and save each proven combination of material, thickness, gas and nozzle in a process library so operators load it instead of retyping it.</p>
+<p>This guide applies to CypCut 2D sheet cutting on Friendess (BOCHU) FSCUT control systems with a BCS100 capacitive height controller. Menu names and the exact list of fields differ between CypCut versions, and HypCut (high-power) and tube cutting software use different screens, so treat the field names here as a map and confirm them in your version's manual.</p>
+<h2>How CypCut Parameters Are Organized</h2>
+<p>CypCut separates settings by how often they change. Knowing which level a setting lives on stops the most common mistake: changing a machine-wide value to fix one part.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Where it is set</th>
+<th>What it controls</th>
+<th>How often it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global parameters</td>
+<td>Global or machine parameter settings</td>
+<td>Travel speed and acceleration between contours, lift mode (normal lift or leapfrog), return position, edge seeking behavior</td>
+<td>Rarely; after machine commissioning or a motion upgrade</td>
+</tr>
+<tr>
+<td>Layer parameters</td>
+<td>Layer (process) parameter dialog, one tab per layer color</td>
+<td>Cutting speed, laser power, frequency, duty cycle, gas type and pressure, cutting height, focus, piercing stages, slow start, laser-off delay</td>
+<td>Every time material, thickness, gas or nozzle changes</td>
+</tr>
+<tr>
+<td>Graphic process settings</td>
+<td>Applied to selected parts in the drawing</td>
+<td>Lead-in and lead-out, kerf compensation, micro-joints, cutting sequence, start points, cooling points, FlyCut grouping</td>
+<td>Every new job</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> if a problem appears on every part of one material, change the layer parameters. If it appears only at the start or end of a contour, change the graphic process settings. If it only costs time, look at the global parameters.</p>
+<p>For how CypCut fits alongside CAD and nesting software, see our overview of the <a href="https://arcuscnc.com/laser-cutting-software/">three layers of laser cutting software</a>.</p>
+<h2>Layer Parameters: What Each Setting Controls</h2>
+<p>Each CypCut layer stores a full cutting recipe. Every contour drawn in that layer color is cut with that recipe, so layers are also the tool for giving different features of the same part different settings.</p>
+<h3>The Core Cutting Settings</h3>
+<p>The table below lists the layer parameters that decide edge quality, what each one controls, and which direction to adjust it.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Layer parameter</th>
+<th>What it controls</th>
+<th>Raise it when</th>
+<th>Lower it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cutting speed</td>
+<td>Energy per millimeter of cut</td>
+<td>Edge shows burn marks, wide kerf, or heavy oxidation</td>
+<td>Cut does not go through, sparks spray upward, dross hangs at the bottom</td>
+</tr>
+<tr>
+<td>Peak power (%)</td>
+<td>Laser output during cutting</td>
+<td>Cut fails to penetrate at the target speed</td>
+<td>Kerf is wide or the top edge melts on thin sheet</td>
+</tr>
+<tr>
+<td>Frequency and duty cycle</td>
+<td>Pulse behavior; continuous wave at 100% duty</td>
+<td>Use continuous wave for straight cutting on most sheet</td>
+<td>Use pulsed output for small holes, sharp corners and fine features to reduce overheating</td>
+</tr>
+<tr>
+<td>Gas type</td>
+<td>Cutting chemistry: oxygen burns, nitrogen and air melt</td>
+<td>Switch to nitrogen when an oxide-free edge is required</td>
+<td>Switch to oxygen for thick mild steel where speed per kW matters more than edge color</td>
+</tr>
+<tr>
+<td>Gas pressure</td>
+<td>Melt ejection</td>
+<td>Dross sticks to the bottom edge</td>
+<td>Edge is rough from turbulence or gas use is excessive</td>
+</tr>
+<tr>
+<td>Cutting height</td>
+<td>Nozzle-to-sheet standoff held by the BCS100</td>
+<td>Spatter reaches the nozzle or the head touches tipped parts</td>
+<td>Gas flow is not reaching the kerf and dross increases</td>
+</tr>
+<tr>
+<td>Focus position</td>
+<td>Where the beam waist sits relative to the sheet</td>
+<td>Moving focus deeper helps thick nitrogen cuts</td>
+<td>Moving focus upward helps thin sheet and oxygen cutting</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> change one parameter at a time and cut a short test line after each change. Changing speed and pressure together hides which one fixed the problem. Gas choice is explained in our <a href="https://arcuscnc.com/assist-gas-selection-laser-cutting-guide/">assist gas selection guide</a>, and focus behavior is explained in our guide to <a href="https://arcuscnc.com/setting-the-laser-focus-position/">setting the laser focus position</a>.</p>
+<p>Published speed and power figures are a starting point, not a final value. Laser source brand, cutting head optics, nozzle size and gas purity all move the working window, so a value copied from another machine usually needs adjustment. For stainless steel starting speeds by thickness, use our <a href="https://arcuscnc.com/laser-cutting-machine-stainless-steel-speed/">stainless steel cutting speed chart</a>.</p>
+<h3>Start and End Settings Inside the Layer</h3>
+<p>Three layer settings control what happens at the beginning and end of each contour, where most visible defects start.</p>
+<ul>
+<li><strong>Slow start (slow lead-in):</strong> the cutting head runs at reduced speed for a short distance after piercing, so the cut stabilizes before reaching full speed. It prevents a burned or unseparated section right after the pierce point. Increase the slow-start distance on thick plate and on oxygen cutting.</li>
+<li><strong>Laser-off delay:</strong> keeps the beam on briefly at the end of a contour so the last millimeter separates fully. Too long a delay leaves a burn mark at the closing point.</li>
+<li><strong>Corner and speed-related power control:</strong> reduces power automatically when the head slows down at corners, preventing burned corners on thin sheet. If corners burn while straight edges are clean, check this setting before lowering power for the whole layer.</li>
+</ul>
+<h3>Planning Layers for One Part</h3>
+<p>Assigning features to separate layers lets one part be cut with several recipes. A typical layer plan for a sheet metal part looks like this:</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Layer use</th>
+<th>Typical difference from the main contour layer</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main outer contours</td>
+<td>Reference recipe for the material and thickness</td>
+<td>Highest edge-quality priority</td>
+</tr>
+<tr>
+<td>Small holes (diameter close to sheet thickness)</td>
+<td>Lower speed, pulsed output, shorter lead-in</td>
+<td>Prevents oval or burned holes</td>
+</tr>
+<tr>
+<td>Fine slots and text cut through</td>
+<td>Pulsed output, reduced power</td>
+<td>Limits heat build-up in narrow features</td>
+</tr>
+<tr>
+<td>Surface marking or scoring lines</td>
+<td>Low power, no piercing, cut does not penetrate</td>
+<td>Bend lines or part numbers without separate marking equipment</td>
+</tr>
+<tr>
+<td>Do-not-cut reference geometry</td>
+<td>Layer disabled for output</td>
+<td>Keeps reference lines in the file without cutting them</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> start with one layer per material and thickness and add feature layers only when a specific feature fails with the main recipe. Every extra layer is another recipe to maintain in the process library.</p>
+<h2>Piercing Setup in CypCut</h2>
+<p>Piercing parameters sit inside each layer and run before the cutting recipe starts. The piercing mode decides how many stages the pierce uses, and each stage has its own height, power, frequency, duty cycle, gas, pressure, focus and dwell time.</p>
+<h3>Choosing the Piercing Mode</h3>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Material thickness (mild steel, oxygen)</th>
+<th>Recommended piercing mode</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up to about 3 mm</td>
+<td>No separate pierce, or a short single-stage pierce</td>
+<td>The cut parameters penetrate almost instantly</td>
+</tr>
+<tr>
+<td>About 4–10 mm</td>
+<td>Single-stage pulsed pierce</td>
+<td>Controlled pulses open the hole without blowing molten metal back at the nozzle</td>
+</tr>
+<tr>
+<td><strong>About 12 mm and above</strong></td>
+<td><strong>Two- or three-stage progressive pierce</strong></td>
+<td><strong>Starts high with low duty cycle, then steps closer and stronger, protecting the protective lens from spatter</strong></td>
+</tr>
+<tr>
+<td>Thick plate in long production runs</td>
+<td>Multi-stage pierce plus pre-piercing</td>
+<td>All holes are pierced first, then cut, so heat from piercing does not affect cutting</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> thickness bands shift with laser power. A higher-power source moves each band toward thicker material; stainless and aluminum with nitrogen usually need more conservative piercing than mild steel of the same thickness. Treat these bands as typical starting points and confirm them with a test pierce on your material.</p>
+<p>In a multi-stage pierce, the first stage normally uses a higher nozzle height, lower duty cycle and lower power to start the hole without heavy back-spatter. Later stages move closer, raise duty cycle and power, and finish the hole. A short dwell between the last stage and the cut start prevents the cut from beginning in an incompletely opened hole.</p>
+<p>The physics behind frequency, duty cycle and pierce focus is covered in our guide to <a href="https://arcuscnc.com/optimizing-laser-piercing-parameters-for-thick-plate-cutting/">multi-stage piercing for thick plate</a>. Stainless steel users who see a raised burr around the pierce point should read our guide to <a href="https://arcuscnc.com/burr-free-laser-piercing-stainless/">burr-free piercing on stainless steel</a>.</p>
+<h3>Pre-Piercing and Cooling Points</h3>
+<p>Pre-piercing pierces every contour on the sheet first and then cuts them in sequence. It reduces the risk that a hot, just-cut area affects the next pierce, and it is most useful on thick mild steel. Cooling points pause the beam at a selected position, typically at a sharp corner on thick plate, so heat dissipates before the head continues. Both add cycle time, so apply them only to the material and thickness ranges that need them.</p>
+<h2>Lead-ins, Lead-outs and Kerf Compensation</h2>
+<p>Lead-ins, lead-outs and compensation are graphic process settings, not layer settings. They are applied to selected parts and decide where each contour starts, where it ends, and whether the finished part matches the drawing dimensions.</p>
+<h3>Lead-in and Lead-out Rules</h3>
+<p>The lead-in moves the pierce point off the finished edge so the pierce mark lands in scrap. The lead-out carries the cut past the closing point so the part separates cleanly.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Lead-in type</th>
+<th>Lead-in position</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outer contour</td>
+<td>Straight line or line plus arc</td>
+<td>On a corner or a straight edge on the scrap side</td>
+<td>Pierce mark falls outside the part; corner starts hide the closing mark</td>
+</tr>
+<tr>
+<td><strong>Inner hole, medium to large</strong></td>
+<td><strong>Arc lead-in from the hole center side</strong></td>
+<td><strong>On a straight section or the longest arc</strong></td>
+<td><strong>Arc entry avoids a notch where the lead meets the contour</strong></td>
+</tr>
+<tr>
+<td>Small hole (close to sheet thickness)</td>
+<td>Short straight lead-in from near the center</td>
+<td>Center area of the hole</td>
+<td>Lead-in must fit inside the hole without crossing the edge</td>
+</tr>
+<tr>
+<td>Visible cosmetic edge</td>
+<td>Lead-in placed on a hidden edge</td>
+<td>Edge that will be bent, welded or covered</td>
+<td>Keeps the start and end marks off visible surfaces</td>
+</tr>
+<tr>
+<td>Thick plate</td>
+<td>Longer lead-in</td>
+<td>Away from sharp corners</td>
+<td>Gives the pierce and slow start room to stabilize before the edge</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> the lead-in must always start on the scrap side of the contour, outside an outer contour and inside a hole. A lead-in that is too long on small holes cuts into the part edge; a lead-in that is too short on thick plate puts the pierce crater on the finished edge.</p>
+<p>Overcut or a small seal gap at the closing point controls how the contour ends. A slight overcut guarantees separation; a seal gap leaves a tiny uncut section that acts as a micro-joint. Excess overcut leaves a visible notch where the cut passes the start point.</p>
+<h3>Kerf Compensation</h3>
+<p>The laser removes a strip of material equal to the kerf width, so an uncompensated outer contour comes out undersized and an uncompensated hole comes out oversized. Kerf compensation offsets the cutting path by half the kerf width: outward for outer contours and inward for holes.</p>
+<p>Measure the kerf on a test cut for each material, thickness and nozzle combination, and store the compensation value together with that recipe. Kerf width changes with focus position, nozzle size and gas pressure, so a compensation value that was correct before a nozzle change may no longer be correct after it.</p>
+<h3>Micro-joints and Cutting Sequence</h3>
+<p>Micro-joints are short uncut sections that hold small parts in the skeleton so they cannot tip up into the head path. Use them on parts small enough to fall through or rotate between support slats. Cut inner contours before outer contours, and cut small parts before large ones, so each part stays supported by the sheet until its last contour is finished.</p>
+<h2>FlyCut and Leapfrog: Motion Settings That Depend on Your Layers</h2>
+<p>CypCut FlyCut cuts rows of identical small shapes, such as grids of round or square holes, in a continuous motion without stopping and lifting between shapes. Leapfrog (frog jump) shortens travel between contours by lifting and moving the head along an arc instead of up, across and down.</p>
+<p>Both functions change motion, not the cutting recipe, but they only work with suitable layer settings. FlyCut needs a pierce that is fast enough to happen on the move, which in practice limits it to thin sheet with short or no piercing, and it raises the risk of tipped parts because the head does not lift between shapes. Leapfrog lifts the head less than a normal lift, so micro-joints and a correct cutting sequence become more important to avoid collisions.</p>
+<p>The full FlyCut setup steps and risks are in our guide to <a href="https://arcuscnc.com/fly-cutting/">fly cutting</a>, and leapfrog settings are covered in our guide to <a href="https://arcuscnc.com/frog-jump-cutting/">frog jump cutting</a>.</p>
+<h2>Building a Reusable Process Library</h2>
+<p>A process library stores proven layer parameters so the same material, thickness, gas and nozzle always load the same recipe. Without a library, each operator rebuilds parameters from memory and cut quality varies between shifts.</p>
+<h3>What to Store for Each Recipe</h3>
+<p>Each entry should capture everything that changes the result, not only speed and power. A recipe without the nozzle size and focus value cannot be reproduced.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Example entry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material and grade</td>
+<td>Stainless 304</td>
+</tr>
+<tr>
+<td>Thickness</td>
+<td>3 mm</td>
+</tr>
+<tr>
+<td>Gas and purity</td>
+<td>Nitrogen, 99.99%</td>
+</tr>
+<tr>
+<td>Nozzle type and diameter</td>
+<td>Single-layer, 2.0 mm</td>
+</tr>
+<tr>
+<td>Laser source power</td>
+<td>6 kW</td>
+</tr>
+<tr>
+<td>Layer recipe</td>
+<td>Speed, power, frequency, duty cycle, pressure, height, focus</td>
+</tr>
+<tr>
+<td>Piercing stages</td>
+<td>Mode and values for each stage</td>
+</tr>
+<tr>
+<td>Kerf compensation</td>
+<td>Measured value for this recipe</td>
+</tr>
+<tr>
+<td>Date, operator and test result</td>
+<td>Date tested, who tested, edge quality notes</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> the example values show the format, not recommended settings. A consistent naming pattern such as material_thickness_gas_nozzle (for example SS304_3mm_N2_D2.0) lets operators find the right recipe without opening each one.</p>
+<h3>Library Management Practices</h3>
+<ul>
+<li><strong>Test before saving:</strong> cut a test coupon with straight edges, a small hole and a sharp corner, and save the recipe only after all three pass inspection.</li>
+<li><strong>Restrict editing:</strong> let operators load recipes and let only the process owner overwrite them, so a temporary adjustment does not become the new standard.</li>
+<li><strong>Record changes:</strong> note the date and reason whenever a recipe changes, such as a new gas supplier or a nozzle type change.</li>
+<li><strong>Back up the library:</strong> export the parameter files to a separate drive regularly and before any software update or industrial PC replacement.</li>
+<li><strong>Re-validate after hardware changes:</strong> a new protective lens, nozzle type, laser source or cutting head can shift the working window, so re-test the most-used recipes after any of these changes.</li>
+</ul>
+<h2>Tuning Order and Troubleshooting Table</h2>
+<p>Tuning in a fixed order prevents chasing one problem with the wrong parameter. Confirm the hardware first: clean protective lens, centered nozzle, calibrated BCS100 height controller and correct gas purity. Then tune in this order: cutting height and focus, gas type and pressure, speed and power, piercing, slow start, and finally lead-ins and compensation.</p>
+<figure class="wp-block-table"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Check first</th>
+<th>Check next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dross on the bottom edge</td>
+<td>Gas pressure, focus position</td>
+<td>Cutting speed</td>
+</tr>
+<tr>
+<td>Cut does not go through</td>
+<td>Cutting speed, focus position</td>
+<td>Power, protective lens condition</td>
+</tr>
+<tr>
+<td>Burn mark or unseparated section right after the pierce</td>
+<td>Slow start distance and speed</td>
+<td>Pierce dwell time</td>
+</tr>
+<tr>
+<td>Pierce blowout or spatter on the nozzle</td>
+<td>Number of pierce stages, first-stage height</td>
+<td>First-stage duty cycle and power</td>
+</tr>
+<tr>
+<td>Burned corners on thin sheet</td>
+<td>Corner power control</td>
+<td>Pulsed output for the corner-heavy layer</td>
+</tr>
+<tr>
+<td>Oval or burned small holes</td>
+<td>Separate small-hole layer with lower speed</td>
+<td>Lead-in length, pulsed output</td>
+</tr>
+<tr>
+<td>Notch where the contour closes</td>
+<td>Overcut length, lead-in type</td>
+<td>Laser-off delay</td>
+</tr>
+<tr>
+<td>Parts undersized or holes oversized</td>
+<td>Kerf compensation direction and value</td>
+<td>Focus and nozzle changes since the last measurement</td>
+</tr>
+<tr>
+<td>Head collides with tipped parts</td>
+<td>Micro-joints, cutting sequence</td>
+<td>Lift mode (leapfrog) and FlyCut use</td>
+</tr>
+<tr>
+<td>Height alarms or unstable standoff</td>
+<td>BCS100 calibration, nozzle and ceramic ring</td>
+<td>Grounding and cable connections</td>
+</tr>
+</tbody>
+</table></figure>
+<p><strong>How to read the table:</strong> work through the first column before touching the second. If a symptom appears suddenly on a recipe that worked before, suspect hardware (lens, nozzle, gas) before changing parameters. Height-control alarms are covered in our guide to <a href="https://arcuscnc.com/troubleshooting-capacitive-sensor-errors/">capacitive sensor errors</a>.</p>
+<h2>Limitations of Parameter Tuning</h2>
+<p>CypCut parameters can only control what the hardware allows. Several common problems cannot be fixed in software.</p>
+<p><strong>When the hardware is the cause:</strong> a contaminated protective lens, an off-center nozzle, a damaged ceramic ring or low gas purity produce the same symptoms as bad parameters. Adjusting parameters to compensate for worn hardware creates recipes that fail as soon as the part is replaced.</p>
+<p><strong>When parameters from another machine do not transfer:</strong> recipes depend on the laser source, cutting head optics, nozzle and gas supply. A parameter file from another machine, even another CypCut machine, is a starting point that needs re-testing, not a finished recipe.</p>
+<p><strong>When a different software screen applies:</strong> HypCut on high-power machines and tube cutting software organize parameters differently, and some fields described here may be named or grouped differently in your CypCut version.</p>
+<p><strong>When the material is the limit:</strong> highly reflective metals, heavily rusted or painted plate, and coated sheet can fall outside a stable working window regardless of parameters. Material preparation or a different process may be the better answer.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>What are the most important CypCut parameters to set first?</h3>
+<p>Set cutting height and focus position first, then gas type and pressure, then cutting speed and power. These parameters decide whether the cut penetrates and how much dross remains. Piercing, slow start, lead-ins and kerf compensation come next, because they only affect the start, end and dimensions of each contour. Changing one parameter at a time and cutting a short test line after each change makes it clear which setting fixed the problem.</p>
+<h3>How do I save and reuse cutting parameters in CypCut?</h3>
+<p>CypCut stores cutting parameters per layer, and proven layer parameters can be saved to a material or process library and loaded for later jobs. Save each recipe under a name that includes material, thickness, gas and nozzle, for example SS304_3mm_N2_D2.0, so operators can find it quickly. Export the library to a backup drive before software updates or industrial PC replacement, and re-test saved recipes after any change of nozzle, lens or laser source.</p>
+<h3>Can I copy CypCut parameters from another machine?</h3>
+<p>You can import parameters from another machine, but treat them as a starting point. Cutting results depend on the laser source, cutting head optics, nozzle type, gas purity and pressure delivery, and these differ between machines even when both run CypCut. Cut a test coupon with a straight edge, a small hole and a corner, adjust focus, pressure and speed as needed, and save the adjusted recipe as a new entry.</p>
+<h3>What is slow start in CypCut?</h3>
+<p>Slow start is a layer setting that runs the cutting head at reduced speed for a short distance after the pierce, before accelerating to full cutting speed. It lets the cut stabilize so the first section of the contour separates cleanly instead of showing burn marks or an uncut section. Thick plate and oxygen cutting usually need a longer slow-start distance than thin sheet cut with nitrogen.</p>
+<h3>How do I set lead-ins for small holes in CypCut?</h3>
+<p>Use a short straight lead-in starting near the center of the hole, so the lead-in fits inside the hole without crossing its edge. For holes with a diameter close to the sheet thickness, place them on a separate layer with lower speed and pulsed output, because the main contour recipe usually overheats small features. Check the finished hole for roundness and a notch at the closing point, and adjust overcut if needed.</p>
+<h3>What is CypCut FlyCut and when should I use it?</h3>
+<p>CypCut FlyCut cuts rows of identical small shapes, such as grids of holes in perforated panels, in a continuous motion without stopping or lifting between shapes. It can greatly reduce cycle time on thin sheet, but it needs fast or no piercing and raises the risk of tipped parts and slightly oval holes at high speed. It is best suited to thin sheet with regular hole patterns and is not suited to thick plate.</p>
+<h3>Why does the pierce point burn or blow out in CypCut?</h3>
+<p>A burned or blown-out pierce usually means the piercing recipe delivers too much energy too early or too close to the sheet. Add a piercing stage, start the first stage at a higher nozzle height with lower duty cycle and power, and add a short dwell before the cut begins. If the problem started suddenly on a recipe that previously worked, check the protective lens, nozzle and gas pressure before changing parameters.</p>
+  </article>
+</section>
+
+</div>
+<div class="toast" id="toast">已复制</div>
+<script>
+function toast(msg) {
+  var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(function () { t.classList.remove('show'); }, 1400);
+}
+function copyText(text, el) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function () { toast('已复制'); }, function () { fallback(el); });
+  } else { fallback(el); }
+}
+function fallback(el) {
+  try {
+    if (el.select) { el.focus(); el.select(); }
+    else { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    document.execCommand('copy') ? toast('已复制') : toast('已选中，请按 Ctrl/Cmd + C');
+  } catch (e) { toast('已选中，请按 Ctrl/Cmd + C'); }
+}
+document.getElementById('copy-code').addEventListener('click', function () {
+  var c = document.getElementById('code'); copyText(c.value, c);
+});
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.getAttribute('data-copy')); copyText(el.textContent.trim(), el);
+  });
+});
+</script>
+</body>
+</html>
