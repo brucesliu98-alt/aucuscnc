@@ -19,8 +19,8 @@
   - piercing parameters for thick plate → /optimizing-laser-piercing-parameters-for-thick-plate-cutting/
   - capacitive height sensor errors → /troubleshooting-capacitive-sensor-errors/
   - how job shops quote laser cutting → /quoting-laser-cutting/
-  - tube laser cutting machines → /tube-laser-cutting-machine/
-  - fiber laser cutter buying checklist → /buying-a-fiber-laser-cutter/
+  - tube and pipe laser cutting → /service/tube-pipe-laser-cutting/
+  - fiber laser cutting machine guide → /laser-cutting-machine/
 - **301 建议：** 无
 
 ---
@@ -136,7 +136,7 @@ A shop running several lasers, especially from different manufacturers, benefits
 
 ### Tube and Profile Cutting
 
-Tube laser cutting software works from 3D geometry, usually STEP files, rather than flat DXF. Tube nesting must account for chuck clamping zones, tail material waste, profile orientation and weld-seam position. Most tube controllers ship with matched tube nesting software, and third-party tube modules exist for shops that program sheet and tube in one system. More background on tube machines is in our overview of [tube laser cutting machines](/tube-laser-cutting-machine/).
+Tube laser cutting software works from 3D geometry, usually STEP files, rather than flat DXF. Tube nesting must account for chuck clamping zones, tail material waste, profile orientation and weld-seam position. Most tube controllers ship with matched tube nesting software, and third-party tube modules exist for shops that program sheet and tube in one system. More background on tube work is in our overview of [tube and pipe laser cutting](/service/tube-pipe-laser-cutting/).
 
 ## Key Features to Check Before Choosing
 
@@ -199,7 +199,7 @@ Controller software and basic nesting are normally included with the machine. 2D
 
 ### Can I use one software package for machines from different manufacturers?
 
-Yes, if the CAM/nesting package has a tested post-processor for every controller in the shop. Third-party CAM systems are designed for mixed-brand shops, while bundled nesting usually supports only its own controller. Ask the vendor for a reference customer running your exact controller model and software version, because post-processor quality varies between controllers. Before buying a new machine, check its controller against our [fiber laser cutter buying checklist](/buying-a-fiber-laser-cutter/).
+Yes, if the CAM/nesting package has a tested post-processor for every controller in the shop. Third-party CAM systems are designed for mixed-brand shops, while bundled nesting usually supports only its own controller. Ask the vendor for a reference customer running your exact controller model and software version, because post-processor quality varies between controllers. Before buying a new machine, compare its controller using our [fiber laser cutting machine guide](/laser-cutting-machine/).
 
 ---
 
